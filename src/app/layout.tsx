@@ -1,8 +1,16 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
+import localFont from 'next/font/local';
+import '@/styles/globals.css';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
+
+const woodland = localFont({
+  src: './fonts/PPWoodland-Regular.woff2',
+  variable: '--font-woodland',
+  weight: '400',
+  display: 'swap',
+});
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${woodland.variable} ${geistSans.variable} ${geistMono.variable}`}>
       <body className="bg-[var(--color-surface)] text-[var(--color-text)] antialiased">
         <Nav />
         {children}

@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@import "./primitives.css";
+
+/* ============================================================
+   SEMANTIC TOKENS — light mode defaults
+   All values alias to primitives. No raw hex here.
+   ============================================================ */
+
+:root {
+  /* --- Surfaces --- */
+  --color-surface: var(--beige-200);
+  --color-surface-light: var(--beige-50);
+
+  /* --- Text --- */
+  --color-text: var(--beige-900);
+  --color-text-secondary: var(--neutral-700);
+
+  /* --- Accent --- */
+  --color-accent: var(--yellow-400);
+
+  /* --- Borders --- */
+  --color-border: var(--neutral-500);
+  --color-border-light: var(--neutral-400);
+  --color-border-subtle: var(--neutral-200);
+
+  /* --- Typography: font families ---
+     PP Woodland must be self-hosted. Add @font-face in layout.tsx
+     and set --font-woodland to 'PP Woodland' once files are available. */
+  --font-display: var(--font-woodland), Georgia, serif;
+  --font-body: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* --- Typography: font sizes (rem = px/16) --- */
+  --text-display-1: 3.5rem;    /* 56px — hero name */
+  --text-display-2: 2.75rem;   /* 44px — case study title */
+  --text-display-3: 2.25rem;   /* 36px — section heading */
+  --text-display-4: 1.75rem;   /* 28px — sub-heading */
+  --text-body-lg: 1.25rem;     /* 20px — long-form body */
+  --text-body: 1rem;           /* 16px — default body */
+  --text-body-sm: 0.875rem;    /* 14px — secondary body */
+  --text-label: 0.75rem;       /* 12px — UI labels, nav, metadata */
+
+  /* --- Typography: line heights --- */
+  --leading-display: 1.2;
+  --leading-body-lg: 1.4;
+  --leading-body: 1.25;
+  --leading-label: 1;
+
+  /* --- Typography: letter spacing --- */
+  --tracking-display-4: 0.01em;  /* 0.28px at 28px */
+  --tracking-label: 0.05em;      /* 0.6px at 12px */
+
+  /* --- Border radius --- */
+  --radius-tag: 1px;   /* category tags */
+  --radius-sm: 2px;    /* nav items, badges */
+  --radius-md: 8px;    /* cards, images */
+  --radius-full: 9999px;
+}
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: var(--neutral-black);
+    --color-surface-light: var(--neutral-900);
+    --color-text: var(--beige-50);
+    --color-text-secondary: var(--neutral-400);
+    --color-accent: var(--yellow-400);
+    --color-border: var(--neutral-800);
+    --color-border-light: var(--neutral-700);
+    --color-border-subtle: var(--neutral-900);
+  }
+}
+
+/* ============================================================
+   TAILWIND THEME REGISTRATION
+   Registers tokens as Tailwind utilities:
+     --color-* → bg-*, text-*, border-*
+     --font-*  → font-*
+     --text-*  → text-* (font-size)
+     --radius-* → rounded-*
+   ============================================================ */
+
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+
+  /* Colors */
+  --color-surface: var(--color-surface);
+  --color-surface-light: var(--color-surface-light);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-accent: var(--color-accent);
+  --color-border: var(--color-border);
+  --color-border-light: var(--color-border-light);
+  --color-border-subtle: var(--color-border-subtle);
+
+  /* Primitives — available as Tailwind utilities if needed */
+  --color-yellow-800: var(--yellow-800);
+  --color-yellow-700: var(--yellow-700);
+  --color-yellow-600: var(--yellow-600);
+  --color-yellow-500: var(--yellow-500);
+  --color-yellow-400: var(--yellow-400);
+  --color-yellow-300: var(--yellow-300);
+  --color-yellow-200: var(--yellow-200);
+  --color-yellow-100: var(--yellow-100);
+
+  --color-beige-900: var(--beige-900);
+  --color-beige-800: var(--beige-800);
+  --color-beige-700: var(--beige-700);
+  --color-beige-600: var(--beige-600);
+  --color-beige-500: var(--beige-500);
+  --color-beige-400: var(--beige-400);
+  --color-beige-300: var(--beige-300);
+  --color-beige-200: var(--beige-200);
+  --color-beige-100: var(--beige-100);
+  --color-beige-50: var(--beige-50);
+
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-black: var(--neutral-black);
+  --color-neutral-white: var(--neutral-white);
+
+  /* Font sizes */
+  --text-display-1: var(--text-display-1);
+  --text-display-2: var(--text-display-2);
+  --text-display-3: var(--text-display-3);
+  --text-display-4: var(--text-display-4);
+  --text-body-lg: var(--text-body-lg);
+  --text-body: var(--text-body);
+  --text-body-sm: var(--text-body-sm);
+  --text-label: var(--text-label);
+
+  /* Border radius */
+  --radius-tag: var(--radius-tag);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-full: var(--radius-full);
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}

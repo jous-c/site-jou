@@ -1,0 +1,44 @@
+/* ============================================================
+   COLOR PRIMITIVES
+   Source of truth: Figma — Jou An Chen Website 2026
+   Node: 70:562 — Color Primitives
+   DO NOT use these directly in components.
+   Reference semantic tokens in globals.css instead.
+   ============================================================ */
+
+:root {
+  /* Yellow */
+  --yellow-800: #666600;
+  --yellow-700: #8f8f00;
+  --yellow-600: #b8b800;
+  --yellow-500: #e0e000;
+  --yellow-400: #ffff14;
+  --yellow-300: #fcfc75;
+  --yellow-200: #fdfdb9;
+  --yellow-100: #ffffeb;
+
+  /* Beige */
+  --beige-900: #262617;
+  --beige-800: #4d4d2e;
+  --beige-700: #66663d;
+  --beige-600: #868650;
+  --beige-500: #a3a366;
+  --beige-400: #bbbb81;
+  --beige-300: #cdcda2;
+  --beige-200: #e6e6cc;
+  --beige-100: #f5f4e4;
+  --beige-50:  #f8f8f2;
+
+  /* Neutral */
+  --neutral-900: #505049;
+  --neutral-800: #6b6b61;
+  --neutral-700: #808074;
+  --neutral-600: #949489;
+  --neutral-500: #a8a89f;
+  --neutral-400: #bbbbb4;
+  --neutral-300: #cecfc9;
+  --neutral-200: #e2e2df;
+  --neutral-100: #f9f9f9;
+  --neutral-black: #1b1b18;
+  --neutral-white: #ffffff;
+}

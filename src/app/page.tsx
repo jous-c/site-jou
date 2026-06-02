@@ -14,17 +14,17 @@ export default async function HomePage() {
       <Container>
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-3">
-            <Text as="h1" variant="display">
+            <Text as="h1" variant="display-3">
               Work
             </Text>
-            <Text variant="body" className="text-[var(--color-text)]/60">
+            <Text variant="body" className="text-[var(--color-text-secondary)]">
               Selected case studies in product design.
             </Text>
           </div>
           {projects.length > 0 ? (
             <ProjectGrid projects={projects} />
           ) : (
-            <Text variant="caption" className="text-[var(--color-text)]/40">
+            <Text variant="body-sm" className="text-[var(--color-text-secondary)]">
               No projects yet — add your Notion credentials to get started.
             </Text>
           )}

@@ -26,14 +26,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
       )}
       <div className="flex flex-col gap-2">
         <div className="flex items-start justify-between gap-2">
-          <Text as="h2" variant="subheading">
+          <Text as="h2" variant="display-4">
             {project.title}
           </Text>
-          <Text as="span" variant="caption">
+          <Text as="span" variant="body-sm" className="text-[var(--color-text-secondary)]">
             {project.year}
           </Text>
         </div>
-        <Text variant="caption">{project.summary}</Text>
+        <Text variant="body-sm" className="text-[var(--color-text-secondary)]">{project.summary}</Text>
         {project.tags.length > 0 && (
           <div className="flex flex-wrap gap-1.5 pt-1">
             {project.tags.map((tag) => (

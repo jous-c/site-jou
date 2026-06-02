@@ -9,8 +9,9 @@ export function Tag({ label, className }: TagProps) {
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium',
-        'bg-[var(--color-border)]/30 text-[var(--color-text)]/70',
+        'inline-flex items-center rounded-[var(--radius-tag)] px-2.5 py-0.5',
+        'font-sans text-label font-medium uppercase tracking-[var(--tracking-label)]',
+        'bg-[var(--color-accent)] text-[var(--color-text)]',
         className
       )}
     >

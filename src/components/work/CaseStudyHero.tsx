@@ -31,11 +31,11 @@ export function CaseStudyHero({ project }: CaseStudyHeroProps) {
               ))}
             </div>
           )}
-          <Text as="h1" variant="display">
+          <Text as="h1" variant="display-2">
             {project.title}
           </Text>
           <div className="flex items-center gap-4">
-            <Text variant="caption">{project.year}</Text>
+            <Text variant="body-sm" className="text-[var(--color-text-secondary)]">{project.year}</Text>
           </div>
           {project.summary && (
             <Text className="max-w-2xl text-[var(--color-text)]/70">
