@@ -60,19 +60,19 @@ export default async function CaseStudyPage({ params, searchParams }: PageProps)
   ].filter(Boolean) as Array<{ label: string; value: string }>;
 
   return (
-    <PageWrapper className="py-0">
+    <PageWrapper className="bg-surface-light py-0">
       <SectionPageTitle title={project.title} />
       {infoItems.length > 0 && <ProjectInfoSection items={infoItems} />}
       {project.thumbnail && (
         <HeroImage src={project.thumbnail} alt={project.title} />
       )}
 
-      <div className="relative">
-        <article>
+      <div className="flex items-start py-10">
+        <article className="min-w-0 flex-1">
           {mdxContent ? (
             <MDXRemote source={mdxContent} components={mdxComponents} />
           ) : (
-            <div className="px-6 py-[60px] md:px-[52px]">
+            <div className="px-6 py-15 md:px-page">
               <p className="text-text/40">Content coming soon.</p>
             </div>
           )}

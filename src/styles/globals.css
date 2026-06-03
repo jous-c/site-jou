@@ -142,6 +142,9 @@
   --text-body-sm: 0.875rem;    /* 14px — secondary body */
   --text-label: 0.75rem;       /* 12px — UI labels, nav, metadata */
 
+  /* Spacing */
+  --spacing-page: 42px;        /* page-level horizontal padding */
+
   /* Border radius */
   --radius-tag: 1px;           /* category tags */
   --radius-sm: 2px;            /* nav items, badges */
@@ -155,6 +158,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

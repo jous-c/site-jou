@@ -4,14 +4,24 @@ import { Text } from '@/components/ui/Text';
 import { Divider } from '@/components/ui/Divider';
 import { slugify } from '@/lib/utils';
 
+function getTextContent(node: React.ReactNode): string {
+  if (typeof node === 'string') return node;
+  if (typeof node === 'number') return String(node);
+  if (Array.isArray(node)) return node.map(getTextContent).join('');
+  if (node && typeof node === 'object' && 'props' in node) {
+    return getTextContent((node as React.ReactElement).props.children);
+  }
+  return '';
+}
+
 function CaseStudyH1({ children, ...props }: ComponentPropsWithoutRef<'h1'>) {
-  const text = typeof children === 'string' ? children : '';
+  const text = getTextContent(children);
   const id = slugify(text);
 
   return (
-    <div className="px-6 pt-[60px] md:px-[52px]">
+    <div id={id} className="scroll-mt-20 px-6 pt-[60px] md:px-page">
       <Divider className="mb-[60px]" />
-      <Text as="h2" variant="label" className="max-w-[809px]" {...props} id={id}>
+      <Text as="h2" variant="label" className="max-w-[809px]" {...props}>
         {children}
       </Text>
     </div>
@@ -20,7 +30,7 @@ function CaseStudyH1({ children, ...props }: ComponentPropsWithoutRef<'h1'>) {
 
 function CaseStudyH2({ children, ...props }: ComponentPropsWithoutRef<'h2'>) {
   return (
-    <div className="px-6 pt-[52px] md:px-[52px]">
+    <div className="px-6 pt-[52px] md:px-page">
       <Text as="h3" variant="display-sm" className="max-w-[809px]" {...props}>
         {children}
       </Text>
@@ -30,7 +40,7 @@ function CaseStudyH2({ children, ...props }: ComponentPropsWithoutRef<'h2'>) {
 
 function CaseStudyP({ children, ...props }: ComponentPropsWithoutRef<'p'>) {
   return (
-    <div className="px-6 pt-3 md:px-[52px]">
+    <div className="px-6 pt-3 md:px-page">
       <Text as="p" variant="body-lg" className="max-w-[809px]" {...props}>
         {children}
       </Text>
@@ -45,7 +55,7 @@ function CaseStudyImg(props: ComponentPropsWithoutRef<'img'>) {
   const isExternal = src.startsWith('http');
 
   return (
-    <div className="px-6 py-3 md:px-[52px]">
+    <div className="px-6 py-3 md:px-page">
       {isExternal ? (
         <div className="relative aspect-video w-full max-w-[980px] overflow-hidden rounded-md">
           <Image

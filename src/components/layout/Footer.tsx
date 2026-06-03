@@ -45,7 +45,7 @@ function Clock() {
 
 export function Footer() {
   return (
-    <footer className="px-5 pt-[100px] pb-5">
+    <footer className="px-page pt-14 pb-5 ">
       <div className="flex items-center justify-between pt-2.5">
         <Clock />
 

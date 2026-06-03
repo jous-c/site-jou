@@ -7,7 +7,7 @@ interface HeroImageProps {
 
 export function HeroImage({ src, alt }: HeroImageProps) {
   return (
-    <section className="px-6 md:px-[52px]">
+    <section className="px-6 md:px-page">
       <div className="relative aspect-[21/9] w-full overflow-hidden rounded-md border border-dashed border-border">
         <Image
           src={src}

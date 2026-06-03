@@ -12,11 +12,11 @@ export function ProjectList({ projects }: ProjectListProps) {
       {projects.map((project, index) => (
         <div key={project.id}>
           {index > 0 && (
-            <div className="px-[52px] py-2">
+            <div className="px-page py-2">
               <Divider />
             </div>
           )}
-          <div className="px-[52px] py-10">
+          <div className="px-page py-10">
             <ProjectCard project={project} />
           </div>
         </div>

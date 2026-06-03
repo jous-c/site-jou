@@ -18,8 +18,9 @@ export function Sidebar({ company, year, role, headings }: SidebarProps) {
   ].filter(Boolean) as Array<{ label: string; value: string }>;
 
   return (
-    <aside className="absolute right-6 top-0 hidden lg:block lg:right-[28px]">
-      <div className="sticky top-1/2 -translate-y-1/2 w-[256px] rounded-md border border-dashed border-border bg-surface-light py-6">
+    <aside className="hidden shrink-0 self-stretch lg:block lg:w-[284px]">
+      <div className="sticky top-20">
+      <div className="w-[256px] rounded-md border border-dashed border-border bg-surface-light py-4">
         {metaItems.map((item, i) => (
           <div key={item.label}>
             {i > 0 && <Divider className="my-0" />}
@@ -53,6 +54,7 @@ export function Sidebar({ company, year, role, headings }: SidebarProps) {
             </div>
           </>
         )}
+      </div>
       </div>
     </aside>
   );
