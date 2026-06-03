@@ -8,6 +8,9 @@ export interface Project {
   status: 'published' | 'draft' | 'protected';
   thumbnail: string | null;
   sortOrder: number;
+  company: string | null;
+  goal: string | null;
+  role: string | null;
 }
 
 export interface ProjectContent {

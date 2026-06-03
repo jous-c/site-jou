@@ -2,6 +2,8 @@ export { Button } from './Button';
 export { Container } from './Container';
 export { Divider } from './Divider';
 export { FooterLink } from './FooterLink';
+export { LabelStack } from './LabelStack';
 export { NavItem } from './NavItem';
 export { Tag } from './Tag';
 export { Text } from './Text';
+export { VerticalDivider } from './VerticalDivider';

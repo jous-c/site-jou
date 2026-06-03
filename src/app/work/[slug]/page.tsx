@@ -1,10 +1,14 @@
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getProjectBySlug, getProjectContent } from '@/lib/notion';
-import { CaseStudyHero } from '@/components/work/CaseStudyHero';
+import { SectionPageTitle } from '@/components/work/SectionPageTitle';
+import { ProjectInfoSection } from '@/components/work/ProjectInfoSection';
+import { HeroImage } from '@/components/work/HeroImage';
+import { Sidebar } from '@/components/work/Sidebar';
+import { EndSection } from '@/components/work/EndSection';
 import { PasswordGate } from '@/components/work/PasswordGate';
-import { Container } from '@/components/ui/Container';
 import { PageWrapper } from '@/components/layout/PageWrapper';
+import { mdxComponents } from '@/components/work/mdx-components';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -36,8 +40,6 @@ export default async function CaseStudyPage({ params, searchParams }: PageProps)
     notFound();
   }
 
-  // Show password gate when locked param is set OR when protected and not yet unlocked.
-  // Cookie presence is the unlock signal; proxy.ts enforces expiry/validity.
   const isProtected = project.status === 'protected';
   const showGate = isProtected && locked !== undefined;
 
@@ -47,18 +49,43 @@ export default async function CaseStudyPage({ params, searchParams }: PageProps)
 
   const mdxContent = await getProjectContent(project.id);
 
+  const headings = mdxContent
+    .match(/^# (.+)$/gm)
+    ?.map((h) => h.replace('# ', '')) ?? [];
+
+  const infoItems = [
+    project.company && { label: 'Company', value: project.company },
+    project.tags.length > 0 && { label: 'Project type', value: project.tags.join(', ') },
+    project.goal && { label: 'Goal', value: project.goal },
+  ].filter(Boolean) as Array<{ label: string; value: string }>;
+
   return (
-    <PageWrapper>
-      <CaseStudyHero project={project} />
-      <Container className="py-12">
-        <article className="prose prose-neutral max-w-none">
+    <PageWrapper className="py-0">
+      <SectionPageTitle title={project.title} />
+      {infoItems.length > 0 && <ProjectInfoSection items={infoItems} />}
+      {project.thumbnail && (
+        <HeroImage src={project.thumbnail} alt={project.title} />
+      )}
+
+      <div className="relative">
+        <article>
           {mdxContent ? (
-            <MDXRemote source={mdxContent} />
+            <MDXRemote source={mdxContent} components={mdxComponents} />
           ) : (
-            <p className="text-text/40">Content coming soon.</p>
+            <div className="px-6 py-[60px] md:px-[52px]">
+              <p className="text-text/40">Content coming soon.</p>
+            </div>
           )}
         </article>
-      </Container>
+        <Sidebar
+          company={project.company}
+          year={project.year}
+          role={project.role}
+          headings={headings}
+        />
+      </div>
+
+      <EndSection />
     </PageWrapper>
   );
 }

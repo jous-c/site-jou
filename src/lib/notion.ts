@@ -36,7 +36,7 @@ function mapNotionPageToProject(page: Record<string, unknown>): Project {
       ? (yearProp as { number: number }).number
       : new Date().getFullYear();
 
-  const tagsProp = props['Tags'];
+  const tagsProp = props['Project type'] ?? props['Tags'];
   const tags =
     Array.isArray((tagsProp as Record<string, unknown>)?.['multi_select'])
       ? (tagsProp as { multi_select: Array<{ name: string }> }).multi_select.map((t) => t.name)
@@ -50,9 +50,15 @@ function mapNotionPageToProject(page: Record<string, unknown>): Project {
       : 'draft';
 
   const thumbnailProp = props['Thumbnail'];
-  const thumbnail =
+  const rawThumbnail =
     typeof (thumbnailProp as Record<string, unknown>)?.['url'] === 'string'
       ? (thumbnailProp as { url: string }).url
+      : null;
+
+  // Only accept valid image paths (leading slash) or absolute URLs
+  const thumbnail =
+    rawThumbnail && (rawThumbnail.startsWith('/') || rawThumbnail.startsWith('http'))
+      ? rawThumbnail
       : null;
 
   const sortOrderProp = props['SortOrder'];
@@ -60,6 +66,24 @@ function mapNotionPageToProject(page: Record<string, unknown>): Project {
     typeof (sortOrderProp as Record<string, unknown>)?.['number'] === 'number'
       ? (sortOrderProp as { number: number }).number
       : 0;
+
+  const companyProp = props['Company'];
+  const company =
+    Array.isArray((companyProp as Record<string, unknown>)?.['rich_text'])
+      ? ((companyProp as { rich_text: Array<{ plain_text: string }> }).rich_text[0]?.plain_text ?? null)
+      : null;
+
+  const goalProp = props['Goal'];
+  const goal =
+    Array.isArray((goalProp as Record<string, unknown>)?.['rich_text'])
+      ? ((goalProp as { rich_text: Array<{ plain_text: string }> }).rich_text[0]?.plain_text ?? null)
+      : null;
+
+  const roleProp = props['Role'];
+  const role =
+    Array.isArray((roleProp as Record<string, unknown>)?.['rich_text'])
+      ? ((roleProp as { rich_text: Array<{ plain_text: string }> }).rich_text[0]?.plain_text ?? null)
+      : null;
 
   return {
     id,
@@ -71,6 +95,9 @@ function mapNotionPageToProject(page: Record<string, unknown>): Project {
     status: statusValue,
     thumbnail,
     sortOrder,
+    company,
+    goal,
+    role,
   };
 }
 
