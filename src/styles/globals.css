@@ -18,6 +18,9 @@
   /* --- Accent --- */
   --color-accent: var(--yellow-400);
 
+  /* --- Tags --- */
+  --color-tag-bg: var(--green-100);
+
   /* --- Error --- */
   --color-error: var(--red-500);
 
@@ -59,6 +62,7 @@
     --color-border: var(--neutral-800);
     --color-border-light: var(--neutral-700);
     --color-border-subtle: var(--neutral-900);
+    --color-tag-bg: var(--green-100);
   }
 }
 
@@ -87,6 +91,7 @@
   --color-border-light: var(--color-border-light);
   --color-border-subtle: var(--color-border-subtle);
   --color-error: var(--color-error);
+  --color-tag-bg: var(--color-tag-bg);
 
   /* Primitives — available as Tailwind utilities if needed */
   --color-yellow-800: var(--yellow-800);

@@ -7,7 +7,7 @@ import { PageWrapper } from '@/components/layout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Playground',
+  title: 'Styles',
   description: 'Design system foundations — colors, typography, components.',
 };
 
@@ -50,12 +50,12 @@ function SwatchRow({ label, swatches }: {
 
 // ─── Page ───────────────────────────────────────────────────────────────────
 
-export default function PlaygroundPage() {
+export default function StylesPage() {
   return (
     <PageWrapper>
       <Container>
         <div className="flex flex-col gap-2 pb-16">
-          <Text as="h1" variant="display-lg">Playground</Text>
+          <Text as="h1" variant="display-lg">Styles & Components</Text>
           <Text variant="body" className="text-text-secondary">
             Design system foundations — tokens, typography, components.
           </Text>
@@ -158,12 +158,6 @@ export default function PlaygroundPage() {
               <Text variant={variant} as="p">{sample}</Text>
             </div>
           ))}
-
-          <div className="flex flex-col gap-1 border-b border-dashed border-border-subtle pb-8 last:border-0 last:pb-0">
-            <div className="flex items-baseline gap-4 mb-3">
-              <Text variant="display-xl" > test</Text>
-            </div>
-          </div>
 
         </section>
 

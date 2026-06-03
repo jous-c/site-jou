@@ -1,7 +1,6 @@
 import { getProjects } from '@/lib/notion';
-import { ProjectGrid } from '@/components/work/ProjectGrid';
-import { PageWrapper } from '@/components/layout/PageWrapper';
-import { Container } from '@/components/ui/Container';
+import { HeroSection } from '@/components/work/HeroSection';
+import { ProjectList } from '@/components/work/ProjectList';
 import { Text } from '@/components/ui/Text';
 
 export const revalidate = 60;
@@ -10,26 +9,17 @@ export default async function HomePage() {
   const projects = await getProjects();
 
   return (
-    <PageWrapper>
-      <Container>
-        <div className="flex flex-col gap-12">
-          <div className="flex flex-col gap-3">
-            <Text as="h1" variant="display-xl">
-              Work
-            </Text>
-            <Text variant="body" className="text-text-secondary">
-              Selected case studies in product design.
-            </Text>
-          </div>
-          {projects.length > 0 ? (
-            <ProjectGrid projects={projects} />
-          ) : (
-            <Text variant="body-sm" className="text-text-secondary">
-              No projects yet — add your Notion credentials to get started.
-            </Text>
-          )}
+    <main>
+      <HeroSection />
+      {projects.length > 0 ? (
+        <ProjectList projects={projects} />
+      ) : (
+        <div className="px-[52px]">
+          <Text variant="body-sm" className="text-text-secondary">
+            No projects yet — add your Notion credentials to get started.
+          </Text>
         </div>
-      </Container>
-    </PageWrapper>
+      )}
+    </main>
   );
 }

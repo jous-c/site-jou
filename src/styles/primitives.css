@@ -42,6 +42,9 @@
   --neutral-black: #1b1b18;
   --neutral-white: #ffffff;
 
+  /* Green */
+  --green-100: #e8f5ae;
+
   /* Red */
   --red-500: #ef4444;
 }

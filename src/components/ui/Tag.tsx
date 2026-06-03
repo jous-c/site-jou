@@ -11,7 +11,7 @@ export function Tag({ label, className }: TagProps) {
       className={cn(
         'inline-flex items-center rounded-tag px-2.5 py-0.5',
         'font-sans text-label font-medium uppercase tracking-[var(--tracking-label)]',
-        'bg-accent text-text',
+        'bg-tag-bg text-text',
         className
       )}
     >

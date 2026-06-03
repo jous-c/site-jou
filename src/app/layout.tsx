@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: 'jou.design — Product Designer',
     template: '%s | jou.design',
   },
-  description: 'Jou An Chen - case studies, playground work, and more.',
+  description: 'Jou An Chen - case studies, styles, and more.',
   metadataBase: new URL('https://jou.design'),
 };
 
