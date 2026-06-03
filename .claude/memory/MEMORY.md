@@ -1,0 +1,1 @@
+- [Extend tailwind-merge for custom tokens](feedback_tailwind-merge-custom-tokens.md) — custom @theme text-* tokens must be registered in extendTailwindMerge or cn() silently strips them
