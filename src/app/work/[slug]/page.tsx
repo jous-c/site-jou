@@ -49,9 +49,8 @@ export default async function CaseStudyPage({ params, searchParams }: PageProps)
 
   const mdxContent = await getProjectContent(project.id);
 
-  const headings = mdxContent
-    .match(/^# (.+)$/gm)
-    ?.map((h) => h.replace('# ', '')) ?? [];
+  const headings = Array.from(mdxContent.matchAll(/<CaseStudySection label="([^"]+)">/g))
+    .map((m) => m[1]);
 
   const infoItems = [
     project.company && { label: 'Company', value: project.company },

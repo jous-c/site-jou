@@ -154,7 +154,27 @@ export async function getProjectContent(pageId: string): Promise<string> {
 
   try {
     const mdBlocks = await n2m.pageToMarkdown(pageId);
-    return n2m.toMarkdownString(mdBlocks).parent;
+    let md = n2m.toMarkdownString(mdBlocks).parent;
+
+    // Convert code blocks containing image paths/URLs into markdown images
+    md = md.replace(
+      /```[^\n]*\n\s*(\/[^\s]+\.(?:png|jpe?g|gif|webp|avif|svg)|https?:\/\/[^\s]+\.(?:png|jpe?g|gif|webp|avif|svg)(?:\?[^\s]*)?)\s*\n```/gi,
+      (_, url) => `![](${url.trim()})`,
+    );
+
+    // Wrap content into <CaseStudySection> by splitting on h1 headings
+    const sections = md.split(/^# (.+)$/gm);
+    // sections[0] is content before first h1 (preamble), then alternating [label, content, label, content, ...]
+    const preamble = sections[0]?.trim() ?? '';
+    let result = preamble ? `${preamble}\n\n` : '';
+
+    for (let i = 1; i < sections.length; i += 2) {
+      const label = sections[i].trim();
+      const content = (sections[i + 1] ?? '').trim();
+      result += `<CaseStudySection label="${label}">\n\n${content}\n\n</CaseStudySection>\n\n`;
+    }
+
+    return result;
   } catch {
     return '';
   }
