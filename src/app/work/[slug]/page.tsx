@@ -55,7 +55,7 @@ export default async function CaseStudyPage({ params, searchParams }: PageProps)
           {mdxContent ? (
             <MDXRemote source={mdxContent} />
           ) : (
-            <p className="text-[var(--color-text)]/40">Content coming soon.</p>
+            <p className="text-text/40">Content coming soon.</p>
           )}
         </article>
       </Container>

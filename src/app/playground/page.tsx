@@ -27,17 +27,17 @@ function SwatchRow({ label, swatches }: {
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <Text variant="body-sm" className="text-[var(--color-text-secondary)]">{label}</Text>
+      <Text variant="body-sm" className="text-text-secondary">{label}</Text>
       <div className="flex flex-wrap gap-3">
         {swatches.map((s) => (
           <div key={s.name} className="flex flex-col gap-1.5">
             <div
-              className="h-12 w-24 rounded-[var(--radius-sm)] border border-dashed border-[var(--color-border-subtle)]"
+              className="h-12 w-24 rounded-sm border border-dashed border-border-subtle"
               style={{ background: s.var.startsWith('#') ? s.var : `var(${s.var})` }}
             />
             <Text variant="label" as="span">{s.name}</Text>
             {s.hex && (
-              <Text variant="body-sm" as="span" className="text-[var(--color-text-secondary)] lowercase">
+              <Text variant="body-sm" as="span" className="text-text-secondary lowercase">
                 {s.hex}
               </Text>
             )}
@@ -55,8 +55,8 @@ export default function PlaygroundPage() {
     <PageWrapper>
       <Container>
         <div className="flex flex-col gap-2 pb-16">
-          <Text as="h1" variant="display-3">Playground</Text>
-          <Text variant="body" className="text-[var(--color-text-secondary)]">
+          <Text as="h1" variant="display-lg">Playground</Text>
+          <Text variant="body" className="text-text-secondary">
             Design system foundations — tokens, typography, components.
           </Text>
         </div>
@@ -140,24 +140,31 @@ export default function PlaygroundPage() {
           <SectionLabel>Typography</SectionLabel>
 
           {([
-            { variant: 'display-1', label: 'Display 1', meta: 'PP Woodland · 56px · 400',       sample: 'Jou An Chen' },
-            { variant: 'display-2', label: 'Display 2', meta: 'PP Woodland · 44px · 400',       sample: 'Streamlining patient management' },
-            { variant: 'display-3', label: 'Display 3', meta: 'PP Woodland · 36px · 400',       sample: 'Featured work' },
-            { variant: 'display-4', label: 'Display 4', meta: 'PP Woodland · 28px · 400',       sample: 'Project background' },
+            { variant: 'display-xl',  label: 'Display XL',  meta: 'PP Woodland · 56px · 400',  sample: 'Display xl' },
+            { variant: 'display-lg',  label: 'Display LG',  meta: 'PP Woodland · 44px · 400',  sample: 'Display lg' },
+            { variant: 'display-md',  label: 'Display MD',  meta: 'PP Woodland · 36px · 400',  sample: 'Display md' },
+            { variant: 'display-sm',  label: 'Display SM',  meta: 'PP Woodland · 28px · 400',  sample: 'Display sm' },
             { variant: 'body-lg',   label: 'Body LG',   meta: 'Geist · 20px · 400',             sample: 'New York based product designer with experience in web and desktop apps.' },
             { variant: 'body',      label: 'Body',      meta: 'Geist · 16px · 400',             sample: 'New York based product designer with experience in web and desktop apps.' },
             { variant: 'body-md',   label: 'Body MD',   meta: 'Geist · 16px · 500',             sample: 'B2B / Healthcare / AI-UX' },
             { variant: 'body-sm',   label: 'Body SM',   meta: 'Geist · 14px · 400',             sample: 'Secondary information and supporting copy.' },
             { variant: 'label',     label: 'Label',     meta: 'Geist · 12px · 500 · uppercase', sample: 'Section label' },
           ] as const).map(({ variant, label, meta, sample }) => (
-            <div key={variant} className="flex flex-col gap-1 border-b border-dashed border-[var(--color-border-subtle)] pb-8 last:border-0 last:pb-0">
+            <div key={variant} className="flex flex-col gap-1 border-b border-dashed border-border-subtle pb-8 last:border-0 last:pb-0">
               <div className="flex items-baseline gap-4 mb-3">
                 <Text variant="label" as="span">{label}</Text>
-                <Text variant="body-sm" as="span" className="text-[var(--color-text-secondary)]">{meta}</Text>
+                <Text variant="body-sm" as="span" className="text-text-secondary">{meta}</Text>
               </div>
               <Text variant={variant} as="p">{sample}</Text>
             </div>
           ))}
+
+          <div className="flex flex-col gap-1 border-b border-dashed border-border-subtle pb-8 last:border-0 last:pb-0">
+            <div className="flex items-baseline gap-4 mb-3">
+              <Text variant="display-xl" > test</Text>
+            </div>
+          </div>
+
         </section>
 
         <Divider />
@@ -174,11 +181,11 @@ export default function PlaygroundPage() {
             ] as const).map(({ name, val, cssVar }) => (
               <div key={name} className="flex flex-col gap-3 items-start">
                 <div
-                  className="w-16 h-16 bg-[var(--color-border)]"
+                  className="w-16 h-16 bg-border"
                   style={{ borderRadius: cssVar }}
                 />
                 <Text variant="label" as="span">{name}</Text>
-                <Text variant="body-sm" as="span" className="text-[var(--color-text-secondary)]">{val}</Text>
+                <Text variant="body-sm" as="span" className="text-text-secondary">{val}</Text>
               </div>
             ))}
           </div>
@@ -191,7 +198,7 @@ export default function PlaygroundPage() {
           <SectionLabel>Components</SectionLabel>
 
           <div className="flex flex-col gap-4">
-            <Text variant="body-sm" className="text-[var(--color-text-secondary)]">Button</Text>
+            <Text variant="body-sm" className="text-text-secondary">Button</Text>
             <div className="flex flex-wrap gap-3 items-center">
               <Button variant="primary" size="sm">Primary SM</Button>
               <Button variant="primary" size="md">Primary MD</Button>
@@ -202,7 +209,7 @@ export default function PlaygroundPage() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <Text variant="body-sm" className="text-[var(--color-text-secondary)]">Tag</Text>
+            <Text variant="body-sm" className="text-text-secondary">Tag</Text>
             <div className="flex flex-wrap gap-2">
               <Tag label="B2B" />
               <Tag label="Healthcare" />
@@ -211,7 +218,7 @@ export default function PlaygroundPage() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <Text variant="body-sm" className="text-[var(--color-text-secondary)]">Divider</Text>
+            <Text variant="body-sm" className="text-text-secondary">Divider</Text>
             <Divider />
           </div>
         </section>

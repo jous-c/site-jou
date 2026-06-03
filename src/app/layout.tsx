@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: 'jou.design — Product Designer',
     template: '%s | jou.design',
   },
-  description: 'Portfolio of a product designer — case studies, playground work, and more.',
+  description: 'Jou An Chen - case studies, playground work, and more.',
   metadataBase: new URL('https://jou.design'),
 };
 
@@ -38,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${woodland.variable} ${geistSans.variable} ${geistMono.variable}`}>
-      <body className="bg-[var(--color-surface)] text-[var(--color-text)] antialiased">
+      <body className="bg-surface text-text antialiased">
         <Nav />
         {children}
         <Footer />

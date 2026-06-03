@@ -15,12 +15,12 @@ export default function AboutPage() {
       <Container>
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-3">
-            <Text as="h1" variant="display-3">
+            <Text as="h1" variant="display-md">
               About
             </Text>
           </div>
           <Divider />
-          <Text variant="body" className="max-w-2xl text-[var(--color-text)]/70">
+          <Text variant="body" className="max-w-2xl text-text/70">
             Product designer with a focus on systems thinking, clarity, and craft.
           </Text>
         </div>

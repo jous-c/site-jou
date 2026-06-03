@@ -10,9 +10,9 @@ interface CaseStudyHeroProps {
 
 export function CaseStudyHero({ project }: CaseStudyHeroProps) {
   return (
-    <section className="border-b border-[var(--color-border)] pb-12">
+    <section className="border-b border-border pb-12">
       {project.thumbnail && (
-        <div className="relative mb-12 aspect-[21/9] w-full overflow-hidden bg-[var(--color-border)]/10">
+        <div className="relative mb-12 aspect-21/9 w-full overflow-hidden bg-border/10">
           <Image
             src={project.thumbnail}
             alt={project.title}
@@ -31,14 +31,14 @@ export function CaseStudyHero({ project }: CaseStudyHeroProps) {
               ))}
             </div>
           )}
-          <Text as="h1" variant="display-2">
+          <Text as="h1" variant="display-lg">
             {project.title}
           </Text>
           <div className="flex items-center gap-4">
-            <Text variant="body-sm" className="text-[var(--color-text-secondary)]">{project.year}</Text>
+            <Text variant="body-sm" className="text-text-secondary">{project.year}</Text>
           </div>
           {project.summary && (
-            <Text className="max-w-2xl text-[var(--color-text)]/70">
+            <Text className="max-w-2xl text-text/70">
               {project.summary}
             </Text>
           )}

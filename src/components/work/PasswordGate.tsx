@@ -29,10 +29,10 @@ export function PasswordGate({ slug }: PasswordGateProps) {
     <Container>
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-6">
         <div className="flex flex-col items-center gap-2 text-center">
-          <Text as="h1" variant="display-4">
+          <Text as="h1" variant="display-sm">
             This case study is password protected
           </Text>
-          <Text variant="body-sm" className="text-[var(--color-text-secondary)]">Enter the password to view NDA work.</Text>
+          <Text variant="body-sm" className="text-text-secondary">Enter the password to view NDA work.</Text>
         </div>
         <form onSubmit={handleSubmit} className="flex w-full max-w-sm flex-col gap-3">
           <input
@@ -40,10 +40,10 @@ export function PasswordGate({ slug }: PasswordGateProps) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="h-10 w-full rounded-[var(--radius-sm)] border border-dashed border-[var(--color-border)] bg-[var(--color-surface)] px-3 text-body-sm text-[var(--color-text)] outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+            className="h-10 w-full rounded-sm border border-dashed border-border bg-surface px-3 text-body-sm text-text outline-none focus:ring-2 focus:ring-accent"
           />
           {error && (
-            <Text variant="body-sm" className="text-red-500">
+            <Text variant="body-sm" className="text-error">
               Incorrect password. Try again.
             </Text>
           )}
