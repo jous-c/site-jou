@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const navItemVariants = cva(
   [
     'inline-flex items-center justify-center rounded-sm px-0.5 py-px',
-    'font-sans text-label font-medium uppercase tracking-[var(--tracking-label)]',
+    'font-sans text-label font-bold uppercase tracking-[var(--tracking-label)]',
     'leading-[var(--leading-label)] text-text',
     'transition-colors duration-200 ease-in',
   ],
@@ -13,7 +13,7 @@ const navItemVariants = cva(
     variants: {
       state: {
         selected: 'bg-accent',
-        unselected: 'bg-surface border border-dashed border-border hover:bg-accent/40',
+        unselected: 'bg-surface border border-dashed border-border hover:bg-accent',
         hover: 'bg-accent',
       },
     },

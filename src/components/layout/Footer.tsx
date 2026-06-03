@@ -36,7 +36,7 @@ function Clock() {
         <circle cx="6" cy="6" r="5.5" stroke="currentColor" />
         <path d="M6 3V6L8 8" stroke="currentColor" strokeLinecap="round" />
       </svg>
-      <span className="font-sans text-label font-light uppercase tracking-[var(--tracking-label)] leading-[var(--leading-display)] text-text whitespace-nowrap">
+      <span className="font-sans text-label font-medium uppercase tracking-[var(--tracking-label)] leading-[var(--leading-display)] text-text whitespace-nowrap">
         Site updated - {formatted} {time}
       </span>
     </div>
@@ -45,11 +45,11 @@ function Clock() {
 
 export function Footer() {
   return (
-    <footer className="px-page pt-14 pb-5 ">
+    <footer className="px-page pt-4 pb-5 bg-surface-darker">
       <div className="flex items-center justify-between pt-2.5">
         <Clock />
 
-        <span className="font-sans text-label font-light uppercase tracking-[var(--tracking-label)] leading-[var(--leading-label)] text-text whitespace-nowrap">
+        <span className="font-sans text-label font-bold uppercase tracking-[var(--tracking-label)] leading-[var(--leading-label)] text-text whitespace-nowrap">
           Jou.design {new Date().getFullYear()}
         </span>
 

@@ -8,18 +8,20 @@
 
 :root {
   /* --- Surfaces --- */
-  --color-surface: var(--beige-200);
+  --color-surface: var(--yellow-100);
   --color-surface-light: var(--beige-50);
+  --color-surface-darker: var(--beige-300);
 
   /* --- Text --- */
-  --color-text: var(--beige-900);
+  --color-text: var(--neutral-black);
   --color-text-secondary: var(--neutral-700);
+  --color-text-beige-dark: var(--beige-800);
 
   /* --- Accent --- */
   --color-accent: var(--yellow-400);
 
   /* --- Tags --- */
-  --color-tag-bg: var(--green-100);
+  --color-tag-bg: var(--beige-200);
 
   /* --- Error --- */
   --color-error: var(--red-500);
@@ -84,8 +86,10 @@
   /* Colors */
   --color-surface: var(--color-surface);
   --color-surface-light: var(--color-surface-light);
+  --color-surface-darker: var(--color-surface-darker);
   --color-text: var(--color-text);
   --color-text-secondary: var(--color-text-secondary);
+  --color-text-beige-dark: var(--beige-800);
   --color-accent: var(--color-accent);
   --color-border: var(--color-border);
   --color-border-light: var(--color-border-light);
