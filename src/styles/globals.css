@@ -8,9 +8,9 @@
 
 :root {
   /* --- Surfaces --- */
-  --color-surface: var(--yellow-100);
+  --color-surface: var(--beige-200);
   --color-surface-light: var(--beige-50);
-  --color-surface-darker: var(--beige-300);
+  --color-surface-darker: var(--beige-400);
 
   /* --- Text --- */
   --color-text: var(--neutral-black);
@@ -29,7 +29,7 @@
   /* --- Borders --- */
   --color-border: var(--neutral-500);
   --color-border-light: var(--neutral-400);
-  --color-border-subtle: var(--neutral-200);
+  --color-border-subtle: var(--neutral-300);
 
   /* --- Typography: font families ---
      PP Woodland must be self-hosted. Add @font-face in layout.tsx
@@ -166,6 +166,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 64px;
 }
 
 body {

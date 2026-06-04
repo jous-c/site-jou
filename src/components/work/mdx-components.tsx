@@ -13,7 +13,7 @@ function CaseStudyH2({ children, ...props }: ComponentPropsWithoutRef<'h2'>) {
 
 function CaseStudyP({ children, ...props }: ComponentPropsWithoutRef<'p'>) {
   return (
-    <Text as="p" variant="body-lg" className="w-[50vw] pb-40" {...props}>
+    <Text as="p" variant="body-lg" className="w-[50vw] pb-20" {...props}>
       {children}
     </Text>
   );

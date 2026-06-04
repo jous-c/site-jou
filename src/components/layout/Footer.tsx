@@ -44,9 +44,9 @@ function Clock() {
 }
 
 export function Footer() {
-  return (
-    <footer className="px-page pt-4 pb-5 bg-surface-darker">
-      <div className="flex items-center justify-between pt-2.5">
+  return (  
+    <footer className="px-page pt-4 pb-5 bg-surface-darker ">
+      <div className="flex items-center justify-between pt-2.5 ">
         <Clock />
 
         <span className="font-sans text-label font-bold uppercase tracking-[var(--tracking-label)] leading-[var(--leading-label)] text-text whitespace-nowrap">
