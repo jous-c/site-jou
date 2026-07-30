@@ -52,7 +52,7 @@ function SwatchRow({ label, swatches }: {
 
 export default function StylesPage() {
   return (
-    <PageWrapper>
+    <PageWrapper className="bg-surface">
       <Container>
         <div className="flex flex-col gap-2 pb-16">
           <Text as="h1" variant="display-lg">Styles & Components</Text>

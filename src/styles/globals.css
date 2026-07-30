@@ -10,7 +10,7 @@
   /* --- Surfaces --- */
   --color-surface: var(--beige-200);
   --color-surface-light: var(--beige-50);
-  --color-surface-darker: var(--beige-400);
+  --color-surface-darker: var(--beige-300);
 
   /* --- Text --- */
   --color-text: var(--neutral-black);

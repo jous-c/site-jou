@@ -45,15 +45,15 @@ function Clock() {
 
 export function Footer() {
   return (  
-    <footer className="px-page pt-4 pb-5 bg-surface-darker ">
-      <div className="flex items-center justify-between pt-2.5 ">
+    <footer className="px-page pt-10 pb-10 bg-surface ">
+      <div className="flex items-start justify-between pt-2.5 ">
         <Clock />
 
         <span className="font-sans text-label font-bold uppercase tracking-[var(--tracking-label)] leading-[var(--leading-label)] text-text whitespace-nowrap">
           Jou.design {new Date().getFullYear()}
         </span>
 
-        <div className="flex items-center gap-5">
+        <div className="flex flex-col items-end gap-5">
           {FOOTER_LINKS.map((link) => (
             <FooterLink key={link.label} label={link.label} href={link.href} />
           ))}
