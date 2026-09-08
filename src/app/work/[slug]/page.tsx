@@ -67,18 +67,16 @@ export default async function CaseStudyPage({ params, searchParams }: PageProps)
       )}
 
       <div className="flex items-start py-10">
-        <article className="min-w-0 flex-1">
+        <article className="min-w-0 flex-1 px-6 md:px-page">
           {mdxContent ? (
             <MDXRemote source={mdxContent} components={mdxComponents} />
           ) : (
-            <div className="px-6 py-15 md:px-page">
+            <div className="py-15">
               <p className="text-text/40">Content coming soon.</p>
             </div>
           )}
         </article>
         <Sidebar
-          company={project.company}
-          year={project.year}
           role={project.role}
           headings={headings}
         />

@@ -1,60 +1,47 @@
 import { LabelStack } from '@/components/ui/LabelStack';
-import { Divider } from '@/components/ui/Divider';
 import { Text } from '@/components/ui/Text';
 import { slugify } from '@/lib/utils';
 
 interface SidebarProps {
-  company?: string | null;
-  year: number;
   role?: string | null;
   headings: string[];
 }
 
-export function Sidebar({ company, year, role, headings }: SidebarProps) {
-  const metaItems = [
-    company && { label: 'Company', value: company },
-    { label: 'Year', value: String(year) },
-    role && { label: 'My Role', value: role },
-  ].filter(Boolean) as Array<{ label: string; value: string }>;
-
+export function Sidebar({ role, headings }: SidebarProps) {
   return (
-    <aside className="hidden shrink-0 self-stretch lg:block lg:w-[284px]">
+    <aside className="hidden shrink-0 self-stretch pr-page lg:block lg:w-[284px]">
       <div className="sticky top-20">
-      <div className="w-[256px] rounded-md border border-dashed border-border bg-surface-light py-4">
-        {metaItems.map((item, i) => (
-          <div key={item.label}>
-            {i > 0 && <Divider className="my-0" />}
-            <div className="px-4 py-2.5">
-              <LabelStack
-                label={item.label}
-                value={item.value}
-                valueClassName="text-body-sm font-normal"
-              />
-            </div>
-          </div>
-        ))}
+        <div className="flex w-full flex-col items-end gap-5 text-right">
+          {role && (
+            <LabelStack
+              label="My Role"
+              value={role}
+              className="items-end"
+              valueClassName="text-body-sm font-normal"
+            />
+          )}
 
-        {headings.length > 0 && (
-          <>
-            <Divider className="my-0" />
-            <div className="flex flex-col gap-2 px-4 pt-5">
-              <Text variant="label">Index</Text>
-              <ul className="flex flex-col gap-1">
+          {headings.length > 0 && (
+            <div className="flex flex-col items-end gap-2">
+              <Text variant="label">Sections</Text>
+              <ul className="flex flex-col items-end gap-1">
                 {headings.map((heading) => (
                   <li key={heading}>
-                    <a
-                      href={`#${slugify(heading)}`}
-                      className="block font-sans text-body-sm text-text hover:text-text-secondary transition-colors"
-                    >
-                      {heading}
+                    <a href={`#${slugify(heading)}`}>
+                      <Text
+                        as="span"
+                        variant="body-lg"
+                        className="underline hover:text-text-secondary transition-colors"
+                      >
+                        {heading}
+                      </Text>
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
-          </>
-        )}
-      </div>
+          )}
+        </div>
       </div>
     </aside>
   );

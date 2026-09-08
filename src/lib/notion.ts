@@ -1,12 +1,38 @@
 import { Client } from '@notionhq/client';
 import { NotionToMarkdown } from 'notion-to-md';
 import type { Project } from './types';
+import { isImageSrc, isVideoSrc, normalizeMediaSrc } from './utils';
 
 const notion = new Client({
   auth: process.env.NOTION_SECRET,
 });
 
 const n2m = new NotionToMarkdown({ notionClient: notion });
+
+type NotionMedia = {
+  type?: string;
+  external?: { url?: string };
+  file?: { url?: string };
+};
+
+function notionFileUrl(media: NotionMedia | undefined): string | null {
+  if (!media) return null;
+  const url = media.type === 'external' ? media.external?.url : media.file?.url;
+  return url || null;
+}
+
+function videoMdx(src: string): string {
+  const resolved = normalizeMediaSrc(src);
+  return `<Video src="${resolved.replace(/"/g, '&quot;')}" />`;
+}
+
+n2m.setCustomTransformer('video', async (block) => {
+  const url = notionFileUrl((block as { video?: NotionMedia }).video);
+  if (!url) return '';
+  if (isVideoSrc(url)) return videoMdx(url);
+  // YouTube/embeds are not playable as <video src>; keep a link.
+  return `[video](${url})`;
+});
 
 function mapNotionPageToProject(page: Record<string, unknown>): Project {
   const props = (page as { properties: Record<string, Record<string, unknown>> }).properties;
@@ -156,10 +182,15 @@ export async function getProjectContent(pageId: string): Promise<string> {
     const mdBlocks = await n2m.pageToMarkdown(pageId);
     let md = n2m.toMarkdownString(mdBlocks).parent;
 
-    // Convert code blocks containing image paths/URLs into markdown images
+    // Convert code blocks that contain only a media path/URL into images or video
     md = md.replace(
-      /```[^\n]*\n\s*(\/[^\s]+\.(?:png|jpe?g|gif|webp|avif|svg)|https?:\/\/[^\s]+\.(?:png|jpe?g|gif|webp|avif|svg)(?:\?[^\s]*)?)\s*\n```/gi,
-      (_, url) => `![](${url.trim()})`,
+      /```[^\n]*\n\s*((?:https?:\/\/)?[^\s]+)\s*\n```/gi,
+      (match, url: string) => {
+        const src = normalizeMediaSrc(url);
+        if (isImageSrc(src)) return `![](${src})`;
+        if (isVideoSrc(src)) return videoMdx(src);
+        return match;
+      },
     );
 
     // Wrap content into <CaseStudySection> by splitting on h1 headings

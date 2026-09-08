@@ -53,7 +53,7 @@ export function Footer() {
           Jou.design {new Date().getFullYear()}
         </span>
 
-        <div className="flex flex-col items-end gap-5">
+        <div className="flex items-center gap-5">
           {FOOTER_LINKS.map((link) => (
             <FooterLink key={link.label} label={link.label} href={link.href} />
           ))}

@@ -12,6 +12,23 @@ const woodland = localFont({
   display: 'swap',
 });
 
+const monumentGrotesk = localFont({
+  src: [
+    {
+      path: './fonts/ABCMonumentGrotesk-Regular-Trial.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/ABCMonumentGrotesk-Medium-Trial.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-monument-grotesk',
+  display: 'swap',
+});
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -37,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${woodland.variable} ${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${woodland.variable} ${monumentGrotesk.variable} ${geistSans.variable} ${geistMono.variable}`}>
       <body className="bg-surface text-text antialiased">
         <Nav />
         {children}

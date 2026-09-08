@@ -16,7 +16,7 @@ export function ProjectInfoSection({ items }: ProjectInfoSectionProps) {
   if (items.length === 0) return null;
 
   return (
-    <section className="flex flex-col gap-6 px-6 py-6 md:flex-row md:items-start md:gap-[60px] md:px-page">
+    <section className="flex flex-col gap-4 px-6 pt-6 pb-[2.75rem] md:flex-row md:items-start md:px-page">
       {items.map((item, i) => (
         <Fragment key={item.label}>
           {i > 0 && (

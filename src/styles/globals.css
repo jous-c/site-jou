@@ -8,7 +8,7 @@
 
 :root {
   /* --- Surfaces --- */
-  --color-surface: var(--beige-200);
+  --color-surface: var(--beige-50);
   --color-surface-light: var(--beige-50);
   --color-surface-darker: var(--beige-300);
 
@@ -20,6 +20,10 @@
   /* --- Accent --- */
   --color-accent: var(--yellow-400);
 
+  /* --- Media stage --- */
+  --color-media-stage: var(--mint-400);
+  --color-media-stage-soft: var(--mint-200);
+
   /* --- Tags --- */
   --color-tag-bg: var(--beige-200);
 
@@ -27,15 +31,16 @@
   --color-error: var(--red-500);
 
   /* --- Borders --- */
-  --color-border: var(--neutral-500);
-  --color-border-light: var(--neutral-400);
+  --color-border: var(--neutral-700);
+  --color-border-light: var(--neutral-200);
   --color-border-subtle: var(--neutral-300);
 
   /* --- Typography: font families ---
-     PP Woodland must be self-hosted. Add @font-face in layout.tsx
-     and set --font-woodland to 'PP Woodland' once files are available. */
-  --font-display: var(--font-woodland), Georgia, serif;
-  --font-body: var(--font-geist-sans);
+     ABC Monument Grotesk is used for all headings, body, and labels.
+     PP Woodland is kept available as `font-woodland` for one-off usage. */
+  --font-display: var(--font-monument-grotesk), system-ui, sans-serif;
+  --font-body: var(--font-monument-grotesk), system-ui, sans-serif;
+  --font-serif: var(--font-woodland), Georgia, serif;
   --font-mono: var(--font-geist-mono);
 
   /* --- Typography: line heights --- */
@@ -45,9 +50,12 @@
   --leading-label: 1;
 
   /* --- Typography: letter spacing --- */
-  --tracking-display-sm: 0.01em;  /* 0.28px at 28px */
-  --tracking-label: 0.05em;      /* 0.6px at 12px */
+  --tracking-display: -0.04em;      /* -4% — tighter tracking for display headings */
+  --tracking-display-sm: -0.02em;   /* -2% — subheaders (display-sm) */
+  --tracking-label: 0.05em;         /* 0.6px at 12px */
 
+  /* Sticky header: pt-6 + nav item + pb-4 */
+  --nav-height: 3.5rem;
 }
 
 /* ============================================================
@@ -62,7 +70,7 @@
     --color-text-secondary: var(--neutral-400);
     --color-accent: var(--yellow-400);
     --color-border: var(--neutral-800);
-    --color-border-light: var(--neutral-700);
+    --color-border-light: var(--neutral-800);
     --color-border-subtle: var(--neutral-900);
     --color-tag-bg: var(--green-100);
   }
@@ -82,6 +90,7 @@
   --font-sans: var(--font-body);
   --font-mono: var(--font-mono);
   --font-display: var(--font-display);
+  --font-woodland: var(--font-serif);
 
   /* Colors */
   --color-surface: var(--color-surface);
@@ -91,6 +100,8 @@
   --color-text-secondary: var(--color-text-secondary);
   --color-text-beige-dark: var(--beige-800);
   --color-accent: var(--color-accent);
+  --color-media-stage: var(--color-media-stage);
+  --color-media-stage-soft: var(--color-media-stage-soft);
   --color-border: var(--color-border);
   --color-border-light: var(--color-border-light);
   --color-border-subtle: var(--color-border-subtle);
@@ -166,7 +177,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 64px;
+  scroll-padding-top: var(--nav-height);
 }
 
 body {
