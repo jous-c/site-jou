@@ -19,12 +19,12 @@ export function CaseStudySection({ label, children }: CaseStudySectionProps) {
       <Text
         as="h2"
         id={id}
-        variant="body-lg"
-        className="max-w-[800px] text-text-secondary"
+        variant="body"
+        className="max-w-[680px] text-text-secondary"
       >
         {label}
       </Text>
-      <div className="mt-[52px] space-y-2">{children}</div>
+      <div className="mt-[48px] space-y-2 [&>:last-child]:!pb-16">{children}</div>
     </section>
   );
 }

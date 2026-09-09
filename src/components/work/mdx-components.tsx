@@ -6,8 +6,8 @@ import { cn, isVideoSrc, normalizeMediaSrc } from '@/lib/utils';
 import { CaseStudySection } from './CaseStudySection';
 
 const caseStudyListClassName = [
-  'w-[50vw] list-outside space-y-3 pb-20 pl-6',
-  'font-sans text-body-lg font-normal leading-[var(--leading-body-lg)] text-text',
+  'w-full max-w-[680px] list-outside space-y-3 pb-20 pl-6',
+  'font-sans text-body font-normal leading-[var(--leading-body)] text-text',
   'marker:text-text',
   '[&_ol]:w-auto [&_ol]:pb-0 [&_ol]:pt-2',
   '[&_p]:w-auto [&_p]:pb-0',
@@ -16,7 +16,7 @@ const caseStudyListClassName = [
 
 function CaseStudyH2({ children, ...props }: ComponentPropsWithoutRef<'h2'>) {
   return (
-    <Text as="h3" variant="display-sm" className="max-w-[800px] pb-1" {...props}>
+    <Text as="h3" variant="heading6" className="max-w-[680px] pb-1" {...props}>
       {children}
     </Text>
   );
@@ -34,7 +34,7 @@ function CaseStudyP({ children, ...props }: ComponentPropsWithoutRef<'p'>) {
   }
 
   return (
-    <Text as="p" variant="body-lg" className="w-[50vw] pb-20 has-[+ul]:pb-0 has-[+ol]:pb-0" {...props}>
+    <Text as="p" variant="body" className="w-full max-w-[680px] pb-14 has-[+ul]:pb-0 has-[+ol]:pb-0" {...props}>
       {children}
     </Text>
   );
@@ -43,7 +43,7 @@ function CaseStudyP({ children, ...props }: ComponentPropsWithoutRef<'p'>) {
 function CaseStudyMediaFrame({ children }: { children: ReactNode }) {
   return (
     <div className="pb-20">
-      <div className="relative aspect-video w-[50vw] overflow-hidden rounded-md">
+      <div className="relative aspect-video w-full overflow-hidden rounded-md">
         {children}
       </div>
     </div>
@@ -83,7 +83,6 @@ function CaseStudyVideo(props: ComponentPropsWithoutRef<'video'>) {
         className={[
           'relative w-full overflow-hidden rounded-md p-8 md:p-12',
           'bg-linear-to-b from-media-stage-soft to-media-stage',
-          'lg:w-[calc(100%+var(--spacing-page)-40px)]',
         ].join(' ')}
       >
         <div className="relative aspect-video overflow-hidden rounded-md">

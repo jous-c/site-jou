@@ -29,7 +29,7 @@ export function PasswordGate({ slug }: PasswordGateProps) {
     <Container>
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-6">
         <div className="flex flex-col items-center gap-2 text-center">
-          <Text as="h1" variant="display-sm">
+          <Text as="h1" variant="heading5">
             This case study is password protected
           </Text>
           <Text variant="body-sm" className="text-text-secondary">Enter the password to view NDA work.</Text>

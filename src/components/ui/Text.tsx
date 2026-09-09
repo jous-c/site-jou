@@ -4,26 +4,30 @@ import { cn } from '@/lib/utils';
 const textVariants = cva('', {
   variants: {
     variant: {
-      // --- Display scale (ABC Monument Grotesk via --font-display) ---
-      'display-2xl': [
-        'font-display text-display-2xl  leading-[var(--leading-display)]',
-        'tracking-[var(--tracking-display)] text-text not-italic',
+      // --- Heading scale (ABC Monument Grotesk via --font-display) ---
+      heading1: [
+        'font-display text-heading1 leading-[var(--leading-heading)]',
+        'tracking-[var(--tracking-heading)] text-text not-italic',
       ],
-      'display-xl': [
-        'font-display text-display-xl leading-[var(--leading-display)]',
-        'tracking-[var(--tracking-display)] text-text not-italic',
+      heading2: [
+        'font-display text-heading2 leading-[var(--leading-heading)]',
+        'tracking-[var(--tracking-heading)] text-text not-italic',
       ],
-      'display-lg': [
-        'font-display text-display-lg leading-[var(--leading-display)]',
-        'tracking-[var(--tracking-display)] text-text not-italic',
+      heading3: [
+        'font-display text-heading3 leading-[var(--leading-heading)]',
+        'tracking-[var(--tracking-heading)] text-text not-italic',
       ],
-      'display-md': [
-        'font-display text-display-md leading-[var(--leading-display)]',
-        'tracking-[var(--tracking-display)] text-text not-italic',
+      heading4: [
+        'font-display text-heading4 leading-[var(--leading-heading)]',
+        'tracking-[var(--tracking-heading)] text-text not-italic',
       ],
-      'display-sm': [
-        'font-display text-display-sm font-normal leading-[var(--leading-display)]',
-        'tracking-[var(--tracking-display-sm)] text-text not-italic',
+      heading5: [
+        'font-display text-heading5 font-normal leading-[var(--leading-heading)]',
+        'tracking-[var(--tracking-heading-sm)] text-text not-italic',
+      ],
+      heading6: [
+        'font-display text-heading6 font-normal leading-[var(--leading-heading)]',
+        'tracking-[var(--tracking-heading-sm)] text-text not-italic',
       ],
 
       // --- Body scale (ABC Monument Grotesk via --font-body) ---
@@ -36,7 +40,7 @@ const textVariants = cva('', {
         'text-text',
       ],
       'body-md': [
-        'font-sans text-body font-medium leading-[var(--leading-display)]',
+        'font-sans text-body font-medium leading-[var(--leading-heading)]',
         'text-text',
       ],
       'body-sm': [
@@ -46,7 +50,7 @@ const textVariants = cva('', {
 
       // --- Label (ABC Monument Grotesk — uppercase, tracked) ---
       label: [
-        'font-sans text-label font-medium uppercase',
+        'font-sans text-label uppercase',
         'tracking-[var(--tracking-label)] leading-[var(--leading-label)]',
         'text-text-secondary',
       ],

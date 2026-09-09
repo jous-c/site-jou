@@ -16,7 +16,7 @@ export function Nav() {
 
   return (
     <header className={`sticky top-0 z-50 ${isCaseStudy ? 'bg-surface-light' : 'bg-surface'}`}>
-      <nav className={`flex items-end gap-3 px-page pt-6 pb-4 ${isCaseStudy ? '' : 'justify-end'}`}>
+      <nav className={`flex items-end gap-3 px-page pt-4 pb-4 ${isCaseStudy ? '' : 'justify-end'}`}>
         {isCaseStudy && (
           <NavItem label="← back" href="/" state="unselected" className="mr-auto" />
         )}

@@ -28,7 +28,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <div className="flex w-[1000px] gap-[60px] px-3">
         <div className="flex flex-1 flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <Text as="h2" variant="display-sm">
+            <Text as="h2" variant="heading5">
               {project.title}
             </Text>
             <Text variant="body" className="max-w-[732px]">

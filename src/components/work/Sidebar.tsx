@@ -9,37 +9,34 @@ interface SidebarProps {
 
 export function Sidebar({ role, headings }: SidebarProps) {
   return (
-    <aside className="hidden shrink-0 self-stretch pr-page lg:block lg:w-[284px]">
+    <aside className="hidden shrink-0 self-stretch lg:block lg:w-[30%]">
       <div className="sticky top-20">
-        <div className="flex w-full flex-col items-end gap-5 text-right">
+        <div className="flex w-full flex-col items-start gap-5">
           {role && (
             <LabelStack
               label="My Role"
               value={role}
-              className="items-end"
+              className="items-start"
               valueClassName="text-body-sm font-normal"
             />
           )}
 
           {headings.length > 0 && (
-            <div className="flex flex-col items-end gap-2">
-              <Text variant="label">Sections</Text>
-              <ul className="flex flex-col items-end gap-1">
-                {headings.map((heading) => (
-                  <li key={heading}>
-                    <a href={`#${slugify(heading)}`}>
-                      <Text
-                        as="span"
-                        variant="body-lg"
-                        className="underline hover:text-text-secondary transition-colors"
-                      >
-                        {heading}
-                      </Text>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="flex flex-col items-start gap-1">
+              {headings.map((heading) => (
+                <li key={heading}>
+                  <a href={`#${slugify(heading)}`}>
+                    <Text
+                      as="span"
+                      variant="body"
+                      className="underline hover:text-text-secondary transition-colors"
+                    >
+                      {heading}
+                    </Text>
+                  </a>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       </div>

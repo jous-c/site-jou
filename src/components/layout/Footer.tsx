@@ -36,7 +36,7 @@ function Clock() {
         <circle cx="6" cy="6" r="5.5" stroke="currentColor" />
         <path d="M6 3V6L8 8" stroke="currentColor" strokeLinecap="round" />
       </svg>
-      <span className="font-sans text-label font-medium uppercase tracking-[var(--tracking-label)] leading-[var(--leading-display)] text-text whitespace-nowrap">
+      <span className="font-sans text-label font-medium uppercase tracking-[var(--tracking-label)] leading-[var(--leading-heading)] text-text whitespace-nowrap">
         Site updated - {formatted} {time}
       </span>
     </div>

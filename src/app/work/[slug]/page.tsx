@@ -66,8 +66,12 @@ export default async function CaseStudyPage({ params, searchParams }: PageProps)
         <HeroImage src={project.thumbnail} alt={project.title} />
       )}
 
-      <div className="flex items-start py-10">
-        <article className="min-w-0 flex-1 px-6 md:px-page">
+      <div className="flex items-start px-6 py-10 md:px-page">
+        <Sidebar
+          role={project.role}
+          headings={headings}
+        />
+        <article className="min-w-0 w-full lg:w-[70%]">
           {mdxContent ? (
             <MDXRemote source={mdxContent} components={mdxComponents} />
           ) : (
@@ -76,10 +80,6 @@ export default async function CaseStudyPage({ params, searchParams }: PageProps)
             </div>
           )}
         </article>
-        <Sidebar
-          role={project.role}
-          headings={headings}
-        />
       </div>
 
       <EndSection />

@@ -5,7 +5,7 @@ const customTwMerge = extendTailwindMerge({
   extend: {
     theme: {
       text: [
-        'display-2xl', 'display-xl', 'display-lg', 'display-md', 'display-sm',
+        'heading1', 'heading2', 'heading3', 'heading4', 'heading5', 'heading6',
         'body-lg', 'body', 'body-sm', 'label',
       ],
     },

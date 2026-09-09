@@ -55,7 +55,7 @@ export default function StylesPage() {
     <PageWrapper className="bg-surface">
       <Container>
         <div className="flex flex-col gap-2 pb-16">
-          <Text as="h1" variant="display-lg">Styles & Components</Text>
+          <Text as="h1" variant="heading3">Styles & Components</Text>
           <Text variant="body" className="text-text-secondary">
             Design system foundations — tokens, typography, components.
           </Text>
@@ -140,10 +140,12 @@ export default function StylesPage() {
           <SectionLabel>Typography</SectionLabel>
 
           {([
-            { variant: 'display-xl',  label: 'Display XL',  meta: 'PP Woodland · 56px · 400',  sample: 'Display xl' },
-            { variant: 'display-lg',  label: 'Display LG',  meta: 'PP Woodland · 44px · 400',  sample: 'Display lg' },
-            { variant: 'display-md',  label: 'Display MD',  meta: 'PP Woodland · 36px · 400',  sample: 'Display md' },
-            { variant: 'display-sm',  label: 'Display SM',  meta: 'PP Woodland · 28px · 400',  sample: 'Display sm' },
+            { variant: 'heading1',  label: 'Heading 1',  meta: 'Monument Grotesk · 72px · 400',  sample: 'Heading 1' },
+            { variant: 'heading2',  label: 'Heading 2',  meta: 'Monument Grotesk · 56px · 400',  sample: 'Heading 2' },
+            { variant: 'heading3',  label: 'Heading 3',  meta: 'Monument Grotesk · 44px · 400',  sample: 'Heading 3' },
+            { variant: 'heading4',  label: 'Heading 4',  meta: 'Monument Grotesk · 36px · 400',  sample: 'Heading 4' },
+            { variant: 'heading5',  label: 'Heading 5',  meta: 'Monument Grotesk · 28px · 400',  sample: 'Heading 5' },
+            { variant: 'heading6',  label: 'Heading 6',  meta: 'Monument Grotesk · 24px · 400',  sample: 'Heading 6' },
             { variant: 'body-lg',   label: 'Body LG',   meta: 'Geist · 20px · 400',             sample: 'New York based product designer with experience in web and desktop apps.' },
             { variant: 'body',      label: 'Body',      meta: 'Geist · 16px · 400',             sample: 'New York based product designer with experience in web and desktop apps.' },
             { variant: 'body-md',   label: 'Body MD',   meta: 'Geist · 16px · 500',             sample: 'B2B / Healthcare / AI-UX' },
