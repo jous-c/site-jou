@@ -50,12 +50,15 @@
   --leading-label: 1;
 
   /* --- Typography: letter spacing --- */
-  --tracking-heading: -0.04em;      /* -4% — tighter tracking for large headings */
-  --tracking-heading-sm: -0.02em;   /* -2% — smaller headings (heading5–6) */
+  --tracking-heading: -0.06em;      /* -6% — tighter tracking for large headings */
+  --tracking-heading-sm: -0.04em;   /* -4% — smaller headings (heading5–6) */
   --tracking-label: 0.05em;         /* 0.6px at 12px */
 
   /* Sticky header: pt-2 + nav item + pb-4 */
   --nav-height: 3rem;
+
+  /* --- Layout --- */
+  --page-padding-x: var(--space-36); /* outermost inset from screen edge */
 }
 
 /* ============================================================
@@ -147,9 +150,9 @@
    circular var() references — Tailwind owns these variables directly. */
 @theme {
   /* Font sizes (rem = px/16) */
-  --text-heading1: 4.5rem;     /* 72px — hero / splash */
-  --text-heading2: 3.5rem;     /* 56px — hero name */
-  --text-heading3: 2.75rem;    /* 44px — case study title */
+  --text-heading1: 4rem;     /* 72px — hero / splash */
+  --text-heading2: 3.25rem;     /* 56px — hero name */
+  --text-heading3: 2.5rem;    /* 44px — case study title */
   --text-heading4: 2.25rem;    /* 36px — section heading */
   --text-heading5: 1.75rem;    /* 28px — sub-heading */
   --text-heading6: 1.5rem;     /* 24px — small heading */
@@ -159,7 +162,7 @@
   --text-label: 0.75rem;       /* 12px — UI labels, nav, metadata */
 
   /* Spacing */
-  --spacing-page: 42px;        /* page-level horizontal padding */
+  --spacing-page: var(--page-padding-x); /* page-level horizontal padding */
 
   /* Border radius */
   --radius-tag: 1px;           /* category tags */

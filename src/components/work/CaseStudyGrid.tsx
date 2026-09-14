@@ -11,7 +11,7 @@ export function CaseStudyGrid({ as: Tag = 'div', className, children }: CaseStud
   return (
     <Tag
       className={cn(
-        'grid grid-cols-1 px-6 md:px-page',
+        'grid grid-cols-1 px-page',
         'lg:grid lg:grid-cols-[max-content_max-content_minmax(0,1fr)] lg:gap-10',
         className,
       )}

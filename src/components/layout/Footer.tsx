@@ -38,7 +38,7 @@ function Clock() {
         <circle cx="6" cy="6" r="5.5" stroke="currentColor" />
         <path d="M6 3V6L8 8" stroke="currentColor" strokeLinecap="round" />
       </svg>
-      <span className="font-sans text-label font-medium uppercase tracking-[var(--tracking-label)] leading-[var(--leading-heading)] text-text whitespace-nowrap">
+      <span className="font-sans text-label text-secondary whitespace-nowrap">
         Site updated - {formatted} {time}
       </span>
     </div>
@@ -49,13 +49,11 @@ export function Footer() {
   const isLanding = usePathname() === '/';
 
   return (
-    <footer className={cn('px-page pt-10 pb-10', isLanding ? 'bg-yellow-200' : 'bg-surface')}>
-      <div className="flex items-start justify-between pt-2.5 ">
+    <footer className={cn('px-page pt-22 pb-8', isLanding ? 'bg-yellow-200' : 'bg-surface')}>
+      <div className="flex items-start justify-between pt-4 ">
         <Clock />
 
-        <span className="font-sans text-label font-bold uppercase tracking-[var(--tracking-label)] leading-[var(--leading-label)] text-text whitespace-nowrap">
-          Jou.design {new Date().getFullYear()}
-        </span>
+    
 
         <div className="flex items-center gap-5">
           {FOOTER_LINKS.map((link) => (

@@ -1,12 +1,15 @@
 /* ============================================================
-   COLOR PRIMITIVES
+   PRIMITIVES
    Source of truth: Figma — Jou An Chen Website 2026
-   Node: 70:562 — Color Primitives
+   Color node: 70:562 — Color Primitives
    DO NOT use these directly in components.
    Reference semantic tokens in globals.css instead.
    ============================================================ */
 
 :root {
+  /* Spacing */
+  --space-36: 36px;
+
   /* Yellow */
   --yellow-800: #666600;
   --yellow-700: #8f8f00;

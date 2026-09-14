@@ -10,7 +10,6 @@ import { cn } from '@/lib/utils';
 const NAV_ITEMS = [
   { label: 'work', href: '/' },
   { label: 'playground', href: '/playground' },
-  { label: 'writings', href: '/writings' },
   { label: 'about', href: '/about' },
 ];
 
@@ -43,7 +42,7 @@ export function Nav() {
     <header className={`sticky top-0 z-50 ${isCaseStudy ? 'bg-surface-light' : isLanding ? 'bg-yellow-200' : 'bg-surface'}`}>
       <nav
         className={cn(
-          'relative flex min-h-[var(--nav-height)] items-end gap-3 px-page pt-2 pb-4',
+          'relative flex min-h-[var(--nav-height)] items-end gap-2 px-page pt-2 pb-4',
           showLogo && 'max-md:flex-wrap',
           !isCaseStudy && 'justify-end',
         )}
