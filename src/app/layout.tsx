@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import '@/styles/globals.css';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
+import { RouteBackground } from '@/components/layout/RouteBackground';
 
 const woodland = localFont({
   src: './fonts/PPWoodland-Regular.woff2',
@@ -56,9 +57,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${woodland.variable} ${monumentGrotesk.variable} ${geistSans.variable} ${geistMono.variable}`}>
       <body className="bg-surface text-text antialiased">
-        <Nav />
-        {children}
-        <Footer />
+        <RouteBackground>
+          <Nav />
+          {children}
+          <Footer />
+        </RouteBackground>
       </body>
     </html>
   );

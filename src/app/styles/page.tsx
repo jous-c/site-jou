@@ -152,7 +152,7 @@ export default function StylesPage() {
             { variant: 'body-sm',   label: 'Body SM',   meta: 'Geist · 14px · 400',             sample: 'Secondary information and supporting copy.' },
             { variant: 'label',     label: 'Label',     meta: 'Geist · 12px · 500 · uppercase', sample: 'Section label' },
           ] as const).map(({ variant, label, meta, sample }) => (
-            <div key={variant} className="flex flex-col gap-1 border-b border-dashed border-border-subtle pb-8 last:border-0 last:pb-0">
+            <div key={variant} className="flex flex-col gap-1 border-b-dot pb-8 last:bg-none last:pb-0">
               <div className="flex items-baseline gap-4 mb-3">
                 <Text variant="label" as="span">{label}</Text>
                 <Text variant="body-sm" as="span" className="text-text-secondary">{meta}</Text>
@@ -172,7 +172,7 @@ export default function StylesPage() {
             {([
               { name: 'tag',  val: '1px',    cssVar: 'var(--radius-tag)' },
               { name: 'sm',   val: '2px',    cssVar: 'var(--radius-sm)' },
-              { name: 'md',   val: '8px',    cssVar: 'var(--radius-md)' },
+              { name: 'md',   val: '4px',    cssVar: 'var(--radius-md)' },
               { name: 'full', val: '9999px', cssVar: 'var(--radius-full)' },
             ] as const).map(({ name, val, cssVar }) => (
               <div key={name} className="flex flex-col gap-3 items-start">

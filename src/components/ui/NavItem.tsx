@@ -13,7 +13,7 @@ const navItemVariants = cva(
     variants: {
       state: {
         selected: 'bg-accent border border-dotted border-border',
-        unselected: 'bg-surface border border-border hover:bg-accent',
+        unselected: 'bg-transparent border border-border hover:bg-accent',
         hover: 'bg-accent',
       },
     },

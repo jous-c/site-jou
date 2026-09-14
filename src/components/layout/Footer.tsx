@@ -1,6 +1,8 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { FooterLink } from '@/components/ui/FooterLink';
+import { cn } from '@/lib/utils';
 
 const FOOTER_LINKS = [
   { label: 'resume', href: '#' },
@@ -44,8 +46,10 @@ function Clock() {
 }
 
 export function Footer() {
-  return (  
-    <footer className="px-page pt-10 pb-10 bg-surface ">
+  const isLanding = usePathname() === '/';
+
+  return (
+    <footer className={cn('px-page pt-10 pb-10', isLanding ? 'bg-yellow-200' : 'bg-surface')}>
       <div className="flex items-start justify-between pt-2.5 ">
         <Clock />
 

@@ -9,9 +9,9 @@ export function Tag({ label, className }: TagProps) {
   return (
     <span
       className={cn(
-        'inline-flex w-fit items-center rounded-tag px-1',
-        'font-sans text-label font-medium uppercase tracking-[var(--tracking-label)]',
-        'bg-tag-bg text-text',
+        'inline-flex w-fit items-center',
+        'font-sans color-text--secondary',
+        'text-text',
         className
       )}
     >

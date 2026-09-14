@@ -14,7 +14,7 @@
 
   /* --- Text --- */
   --color-text: var(--neutral-black);
-  --color-text-secondary: var(--neutral-700);
+  --color-text-secondary: var(--neutral-600);
   --color-text-beige-dark: var(--beige-800);
 
   /* --- Accent --- */
@@ -54,8 +54,8 @@
   --tracking-heading-sm: -0.02em;   /* -2% — smaller headings (heading5–6) */
   --tracking-label: 0.05em;         /* 0.6px at 12px */
 
-  /* Sticky header: pt-6 + nav item + pb-4 */
-  --nav-height: 3.5rem;
+  /* Sticky header: pt-2 + nav item + pb-4 */
+  --nav-height: 3rem;
 }
 
 /* ============================================================
@@ -164,7 +164,7 @@
   /* Border radius */
   --radius-tag: 1px;           /* category tags */
   --radius-sm: 2px;            /* nav items, badges */
-  --radius-md: 8px;            /* cards, images */
+  --radius-md: 4px;            /* cards, images */
   --radius-full: 9999px;
 }
 
@@ -185,4 +185,47 @@ body {
   background-color: var(--color-surface);
   color: var(--color-text);
   font-family: var(--font-body);
+}
+
+/* ============================================================
+   DOTTED DIVIDERS
+   1px mark / 1px gap (Figma dash 1, gap 1)
+   ============================================================ */
+
+.divider-dot {
+  height: 1px;
+  border: none;
+  background-color: transparent;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--neutral-300) 0,
+    var(--neutral-300) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+.divider-dot-v {
+  width: 1px;
+  align-self: stretch;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--neutral-300) 0,
+    var(--neutral-300) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+.border-b-dot {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--neutral-300) 0,
+    var(--neutral-300) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  background-size: auto 1px;
+  background-position: left bottom;
+  background-repeat: repeat-x;
 }

@@ -6,6 +6,6 @@ interface DividerProps {
 
 export function Divider({ className }: DividerProps) {
   return (
-    <hr className={cn('border-dashed border-border', className)} />
+    <hr className={cn('divider-dot', className)} />
   );
 }

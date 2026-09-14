@@ -6,6 +6,6 @@ interface VerticalDividerProps {
 
 export function VerticalDivider({ className }: VerticalDividerProps) {
   return (
-    <div className={cn('w-px self-stretch border-l border-dashed border-border', className)} />
+    <div className={cn('divider-dot-v', className)} />
   );
 }

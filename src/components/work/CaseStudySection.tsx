@@ -24,7 +24,7 @@ export function CaseStudySection({ label, children }: CaseStudySectionProps) {
       >
         {label}
       </Text>
-      <div className="mt-[48px] space-y-2 [&>:last-child]:!pb-16">{children}</div>
+      <div className="mt-[60px] space-y-2 [&>:last-child]:!pb-16">{children}</div>
     </section>
   );
 }

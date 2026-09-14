@@ -9,7 +9,7 @@ interface SidebarProps {
 
 export function Sidebar({ role, headings }: SidebarProps) {
   return (
-    <aside className="hidden shrink-0 self-stretch lg:block lg:w-[30%]">
+    <aside className="hidden shrink-0 self-stretch pt-10 lg:col-span-2 lg:block">
       <div className="sticky top-20">
         <div className="flex w-full flex-col items-start gap-5">
           {role && (

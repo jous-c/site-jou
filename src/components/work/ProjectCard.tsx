@@ -12,7 +12,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="group flex flex-col gap-8"
+      className="group flex flex-col gap-8 pb-10"
     >
       <div className="relative h-[520px] w-[1000px] overflow-hidden rounded-md bg-border/20">
         {project.thumbnail && (
@@ -25,13 +25,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         )}
       </div>
 
-      <div className="flex w-[1000px] gap-[60px] px-3">
-        <div className="flex flex-1 flex-col gap-6">
-          <div className="flex flex-col gap-2">
+      <div className="flex w-[1000px] justify-between gap-[60px] px-1">
+        <div className="flex w-[450px] flex-col gap-6">
+          <div className="flex flex-col gap-1">
             <Text as="h2" variant="heading5">
               {project.title}
             </Text>
-            <Text variant="body" className="max-w-[732px]">
+            <Text variant="body">
               {project.summary}
             </Text>
           </div>

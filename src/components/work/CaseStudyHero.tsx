@@ -10,7 +10,7 @@ interface CaseStudyHeroProps {
 
 export function CaseStudyHero({ project }: CaseStudyHeroProps) {
   return (
-    <section className="border-b border-border pb-12">
+    <section className="border-b-dot pb-12">
       {project.thumbnail && (
         <div className="relative mb-12 aspect-21/9 w-full overflow-hidden bg-border/10">
           <Image

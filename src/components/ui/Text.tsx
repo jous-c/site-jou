@@ -22,7 +22,7 @@ const textVariants = cva('', {
         'tracking-[var(--tracking-heading)] text-text not-italic',
       ],
       heading5: [
-        'font-display text-heading5 font-normal leading-[var(--leading-heading)]',
+        'font-display text-heading5 font-regular leading-[var(--leading-heading)]',
         'tracking-[var(--tracking-heading-sm)] text-text not-italic',
       ],
       heading6: [
@@ -48,10 +48,10 @@ const textVariants = cva('', {
         'text-text',
       ],
 
-      // --- Label (ABC Monument Grotesk — uppercase, tracked) ---
+      // --- Label (ABC Monument Grotesk ) ---
       label: [
-        'font-sans text-label uppercase',
-        'tracking-[var(--tracking-label)] leading-[var(--leading-label)]',
+        'font-sans text-label',
+        'leading-[var(--leading-label)]',
         'text-text-secondary',
       ],
     },
