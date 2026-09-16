@@ -20,7 +20,7 @@ export function PlaygroundCard({ item, priority = false }: PlaygroundCardProps) 
   return (
     <article className={cn('flex flex-col gap-3', colSpanClass[item.colSpan])}>
       <div
-        className="relative w-full overflow-hidden rounded-md"
+        className="relative w-full overflow-hidden rounded-sm"
         style={{ aspectRatio: item.aspect }}
       >
         {isVideoSrc(item.src) ? (
@@ -48,21 +48,21 @@ export function PlaygroundCard({ item, priority = false }: PlaygroundCardProps) 
 
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-0.5">
-          <Text as="h2" variant="body-md" className="leading-[1.1] tracking-[-0.01em]">
+          <Text as="h2" variant="body-md" className="leading-[1.1] tracking-[-0.01em] text-neutral-white">
             {item.title}
           </Text>
           <div className="flex flex-col">
-            <Text variant="body-sm" className="leading-[1.1]">
+            <Text variant="body-sm" className="leading-[1.1] font-light text-neutral-400">
               {item.description}
             </Text>
             {item.tools && (
-              <Text variant="body-sm" className="leading-[1.1]">
+              <Text variant="body-sm" className="leading-[1.1] text-neutral-400">
                 {item.tools}
               </Text>
             )}
           </div>
         </div>
-        <Text variant="body-sm" className="text-label leading-[1.1] tracking-[-0.01em]">
+        <Text variant="body-sm" className="text-label leading-[1.1] tracking-[-0.01em] text-neutral-400">
           {item.year}
         </Text>
       </div>

@@ -46,10 +46,19 @@ function Clock() {
 }
 
 export function Footer() {
-  const isLanding = usePathname() === '/';
+  const pathname = usePathname();
+  const isLanding = pathname === '/';
+  const isPlayground = pathname === '/playground';
 
   return (
-    <footer className={cn('px-page pt-22 pb-8', isLanding ? 'bg-yellow-200' : 'bg-surface')}>
+    <footer
+      className={cn(
+        'px-page pt-28 pb-4',
+        isLanding && 'bg-yellow-200',
+        isPlayground && 'bg-beige-900 text-neutral-white',
+        !isLanding && !isPlayground && 'bg-surface',
+      )}
+    >
       <div className="flex items-start justify-between pt-4 ">
         <Clock />
 

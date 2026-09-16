@@ -32,6 +32,7 @@ export function Nav() {
   const pathname = usePathname();
   const isCaseStudy = pathname.startsWith('/work/');
   const isLanding = pathname === '/';
+  const isPlayground = pathname === '/playground';
   const showLogo = useSyncExternalStore(
     subscribeToWindowScroll,
     getShowLogoSnapshot,
@@ -39,7 +40,15 @@ export function Nav() {
   );
 
   return (
-    <header className={`sticky top-0 z-50 ${isCaseStudy ? 'bg-surface-light' : isLanding ? 'bg-yellow-200' : 'bg-surface'}`}>
+    <header
+      className={cn(
+        'sticky top-0 z-50',
+        isCaseStudy && 'bg-surface-light',
+        isLanding && 'bg-yellow-200',
+        isPlayground && 'bg-beige-900 text-neutral-white',
+        !isCaseStudy && !isLanding && !isPlayground && 'bg-surface',
+      )}
+    >
       <nav
         className={cn(
           'relative flex min-h-[var(--nav-height)] items-end gap-2 px-page pt-2 pb-4',

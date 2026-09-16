@@ -35,7 +35,7 @@ export const playgroundItems: PlaygroundItem[] = [
   },
   {
     title: 'VelloHealth',
-    description: 'Site design for community behavioral health program',
+    description: 'Site design and build for community behavioral health program',
     year: '2024',
     src: '/images/playground/vellohealth-site-design.mp4',
     alt: 'VelloHealth website design.',
@@ -47,10 +47,10 @@ export const playgroundItems: PlaygroundItem[] = [
     description: 'Pinterest-like site for storing all your youtube videos.',
     tools: 'Javascript / React / Node.js',
     year: '2024',
-    src: '/images/playground/vapor.png',
+    src: '/images/playground/Vapor-thumbnail.avif',
     alt: 'Vapor website design.',
     colSpan: 3,
-    aspect: '2848 / 1550',
+    aspect: '2048 / 1288',
   },
   {
     title: 'Drift',

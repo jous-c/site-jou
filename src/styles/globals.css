@@ -58,7 +58,7 @@
   --nav-height: 3rem;
 
   /* --- Layout --- */
-  --page-padding-x: var(--space-36); /* outermost inset from screen edge */
+  --page-padding-x: var(--space-28); /* outermost inset from screen edge */
 }
 
 /* ============================================================
