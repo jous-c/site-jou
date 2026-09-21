@@ -10,7 +10,6 @@ import { cn } from '@/lib/utils';
 const NAV_ITEMS = [
   { label: 'work', href: '/' },
   { label: 'playground', href: '/playground' },
-  { label: 'about', href: '/about' },
 ];
 
 const LOGO_SCROLL_THRESHOLD = 200;
