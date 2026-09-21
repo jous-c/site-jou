@@ -32,6 +32,7 @@ export function Nav() {
   const pathname = usePathname();
   const isCaseStudy = pathname.startsWith('/work/');
   const isLanding = pathname === '/';
+  const isAbout = pathname === '/about';
   const isPlayground = pathname === '/playground';
   const showLogo = useSyncExternalStore(
     subscribeToWindowScroll,
@@ -44,9 +45,9 @@ export function Nav() {
       className={cn(
         'sticky top-0 z-50',
         isCaseStudy && 'bg-surface-light',
-        isLanding && 'bg-yellow-200',
+        (isLanding || isAbout) && 'bg-yellow-200',
         isPlayground && 'bg-beige-900 text-neutral-white',
-        !isCaseStudy && !isLanding && !isPlayground && 'bg-surface',
+        !isCaseStudy && !isLanding && !isAbout && !isPlayground && 'bg-surface',
       )}
     >
       <nav

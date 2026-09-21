@@ -15,21 +15,19 @@ export default function PlaygroundPage() {
         className="mb-20 grid grid-cols-1 gap-x-4 lg:grid-cols-8"
         aria-labelledby="playground-intro-heading"
       >
-        <div className="flex flex-col gap-3 lg:col-span-3 lg:col-start-6">
+        <div className="flex flex-col gap-3 lg:col-span-3">
           <Text
             as="h2"
             id="playground-intro-heading"
-            variant="body-md"
+            variant="body"
             className="leading-[1.1] tracking-[-0.01em] text-neutral-white"
           >
             What I make outside of work
           </Text>
           <div className="flex flex-col gap-3">
             <Text variant="label" className="font-light leading-[1.3] text-neutral-white">
-              Aside from interface design, I’ve studied industrial design, built
-              furniture, 3D modeled/rendered products, and built smaller. We have
-              all this technology at our fingertips now, why not making something
-              different?
+              Studying industrial design allowed me to explore a variety of media - from 3D modeling, rendering, to making physical objects. Since then, I've built
+              furniture, 3D modeled/rendered products, and designed sites for small businesses. 
             </Text>
             <Text variant="label" className="font-light leading-[1.3] text-neutral-white">
               circa 2019

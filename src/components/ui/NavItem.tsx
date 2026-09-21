@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const navItemVariants = cva(
   [
     'inline-flex items-center justify-center rounded-sm px-1 py-px',
-    'font-sans text-label font-medium border border-dotted border-border uppercase tracking-[var(--tracking-label)]',
+    'font-sans text-label border border-dotted border-border uppercase tracking-[var(--tracking-label)]',
     'leading-[var(--leading-label)] text-text',
     'transition-colors duration-200 ease-in',
   ],

@@ -48,7 +48,7 @@ export function PlaygroundCard({ item, priority = false }: PlaygroundCardProps) 
 
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-0.5">
-          <Text as="h2" variant="body-md" className="leading-[1.1] tracking-[-0.01em] text-neutral-white">
+          <Text as="h2" variant="body" className="leading-[1.1] tracking-[-0.01em] text-neutral-white">
             {item.title}
           </Text>
           <div className="flex flex-col">

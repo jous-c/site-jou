@@ -6,8 +6,8 @@ export function HeroSection() {
       <Text as="h1" variant="heading2">
         Jou An Chen
       </Text>
-      <Text variant="body" className="max-w-[520px]">
-      NYC-based senior product designer making B2B products feel easy in complex domains. Previously at nTop and KoiStudios. Now designing the data layer for financial services at Rengo AI.
+      <Text variant="body" className="max-w-[420px]">
+     Senior Product Designer making complex B2B products feel simple. Previously at nTop and KoiStudios. Now I am designing the data layer for financial services at Rengo AI.
       </Text>
     </section>
   );

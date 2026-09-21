@@ -16,7 +16,7 @@ const caseStudyListClassName = [
 
 function CaseStudyH2({ children, ...props }: ComponentPropsWithoutRef<'h2'>) {
   return (
-    <Text as="h3" variant="heading6" className="max-w-[680px] pb-1" {...props}>
+    <Text as="h3" variant="heading5" className="max-w-[680px] pb-1" {...props}>
       {children}
     </Text>
   );
