@@ -19,14 +19,14 @@ export default function PlaygroundPage() {
           <Text
             as="h2"
             id="playground-intro-heading"
-            variant="body"
+            variant="body-lg"
             className="leading-[1.1] tracking-[-0.01em] text-neutral-white"
           >
-            What I make outside of work
+            What I made outside of work
           </Text>
           <div className="flex flex-col gap-3">
-            <Text variant="label" className="font-light leading-[1.3] text-neutral-white">
-              Studying industrial design allowed me to explore a variety of media - from 3D modeling, rendering, to making physical objects. Since then, I've built
+            <Text variant="body-sm" className="font-light leading-[1.3] text-neutral-white">
+              I love exploring different methods of making with technology - from 3D modeling, rendering, to making physical objects. Since then, I've built
               furniture, 3D modeled/rendered products, and designed sites for small businesses. 
             </Text>
             <Text variant="label" className="font-light leading-[1.3] text-neutral-white">

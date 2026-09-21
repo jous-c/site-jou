@@ -232,3 +232,16 @@ body {
   background-position: left bottom;
   background-repeat: repeat-x;
 }
+
+.border-t-dot {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-border) 0,
+    var(--color-border) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  background-size: auto 1px;
+  background-position: left top;
+  background-repeat: repeat-x;
+}

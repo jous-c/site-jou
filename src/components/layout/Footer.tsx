@@ -5,10 +5,9 @@ import { FooterLink } from '@/components/ui/FooterLink';
 import { cn } from '@/lib/utils';
 
 const FOOTER_LINKS = [
-  { label: 'resume', href: '#' },
-  { label: 'linkedin', href: 'https://linkedin.com' },
-  { label: 'twitter', href: 'https://twitter.com' },
-  { label: 'are.na', href: 'https://are.na' },
+  { label: 'resume', href: '/doc/Jou%20An%20Chen_Resume_2026_.pdf' },
+  { label: 'linkedin', href: 'https://www.linkedin.com/in/jouanchen24/' },
+  { label: 'twitter', href: 'https://x.com/jous_c' },
 ];
 
 function Clock() {
@@ -26,22 +25,9 @@ function Clock() {
   });
 
   return (
-    <div className="flex items-start gap-2">
-      <svg
-        width="12"
-        height="12"
-        viewBox="0 0 12 12"
-        fill="none"
-        className="shrink-0"
-        aria-hidden="true"
-      >
-        <circle cx="6" cy="6" r="5.5" stroke="currentColor" />
-        <path d="M6 3V6L8 8" stroke="currentColor" strokeLinecap="round" />
-      </svg>
-      <span className="font-sans text-label text-secondary whitespace-nowrap">
-        Site updated - {formatted} {time}
-      </span>
-    </div>
+    <span className="font-sans text-label uppercase text-secondary whitespace-nowrap">
+      Site updated - {formatted} {time}
+    </span>
   );
 }
 
@@ -60,12 +46,12 @@ export function Footer() {
         !isLanding && !isAbout && !isPlayground && 'bg-surface',
       )}
     >
-      <div className="flex items-start justify-between pt-4 ">
+      <div className="flex items-start justify-between border-t-dot pt-4">
         <Clock />
 
     
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-2">
           {FOOTER_LINKS.map((link) => (
             <FooterLink key={link.label} label={link.label} href={link.href} />
           ))}
