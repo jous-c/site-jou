@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PlaygroundPage() {
   return (
-    <main className="bg-beige-900 px-page pt-20 pb-20 text-neutral-white">
+    <main className="bg-graph-paper-dark px-page pt-20 pb-20 text-neutral-white">
       <h1 className="sr-only">Playground</h1>
       <section
         className="mb-20 grid grid-cols-1 gap-x-4 lg:grid-cols-8"

@@ -13,9 +13,10 @@ export function RouteBackground({ children }: { children: React.ReactNode }) {
     <div
       className={cn(
         'min-h-dvh',
-        (isLanding || isAbout) && 'bg-yellow-200',
+        isLanding && 'bg-graph-paper',
+        isAbout && 'bg-yellow-200',
         isPlayground &&
-          'bg-beige-900 text-neutral-white [--color-text:var(--neutral-white)]',
+          'bg-graph-paper-dark text-neutral-white [--color-text:var(--neutral-white)]',
         !isLanding && !isAbout && !isPlayground && 'bg-surface',
       )}
     >

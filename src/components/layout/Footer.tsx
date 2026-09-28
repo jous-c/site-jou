@@ -41,8 +41,9 @@ export function Footer() {
     <footer
       className={cn(
         'px-page pt-28 pb-4',
-        (isLanding || isAbout) && 'bg-yellow-200',
-        isPlayground && 'bg-beige-900 text-neutral-white',
+        isLanding && 'bg-graph-paper',
+        isAbout && 'bg-yellow-200',
+        isPlayground && 'bg-graph-paper-dark text-neutral-white',
         !isLanding && !isAbout && !isPlayground && 'bg-surface',
       )}
     >

@@ -14,7 +14,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       href={`/work/${project.slug}`}
       className="group flex flex-col gap-8 pb-10"
     >
-      <div className="relative h-[520px] w-[1000px] overflow-hidden rounded-md bg-border/20">
+      <div className="relative h-[520px] w-[1000px] overflow-hidden rounded-md ">
         {project.thumbnail && (
           <Image
             src={project.thumbnail}

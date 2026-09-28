@@ -44,8 +44,9 @@ export function Nav() {
       className={cn(
         'sticky top-0 z-50',
         isCaseStudy && 'bg-surface-light',
-        (isLanding || isAbout) && 'bg-yellow-200',
-        isPlayground && 'bg-beige-900 text-neutral-white',
+        isLanding && 'bg-graph-paper',
+        isAbout && 'bg-yellow-200',
+        isPlayground && 'bg-graph-paper-dark text-neutral-white',
         !isCaseStudy && !isLanding && !isAbout && !isPlayground && 'bg-surface',
       )}
     >
