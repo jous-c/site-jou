@@ -12,7 +12,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="group flex w-full max-w-[880px] flex-col gap-1 md:gap-4"
+      className="group flex w-full max-w-[980px] flex-col gap-1 md:gap-4"
     >
       <div className="relative aspect-[1000/520] w-full overflow-hidden rounded-lg">
         {project.thumbnail && (
@@ -20,7 +20,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             src={project.thumbnail}
             alt={project.title}
             fill
-            sizes="(max-width: 935px) 100vw, 880px"
+            sizes="(max-width: 1035px) 100vw, 980px"
             className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
           />
         )}
@@ -31,7 +31,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <Text
             as="h2"
             variant="heading4"
-            className="text-body-case leading-[var(--leading-heading)] font-[350] tracking-[-0.02em] md:text-body-lg"
+            className="text-body-case leading-[var(--leading-heading)] font-normal tracking-[-0.02em] md:text-body-lg"
           >
             {project.title}
           </Text>
