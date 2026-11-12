@@ -4,7 +4,17 @@ import { cn } from '@/lib/utils';
 const textVariants = cva('', {
   variants: {
     variant: {
-      // --- Heading scale (ABC Monument Grotesk via --font-display) ---
+      // --- Display scale (Noto Serif via --font-display) ---
+      display1: [
+        'font-display text-display1 font-[350] leading-[var(--leading-heading)]',
+        'tracking-[var(--tracking-heading-sm)] text-text not-italic',
+      ],
+      display2: [
+        'font-display text-display2 font-[350] leading-[var(--leading-heading)]',
+        'tracking-[var(--tracking-heading-sm)] text-text not-italic',
+      ],
+
+      // --- Heading scale (Noto Serif via --font-display) ---
       heading1: [
         'font-display text-heading1 leading-[var(--leading-heading)]',
         'tracking-[var(--tracking-heading)] text-text not-italic',
@@ -14,19 +24,11 @@ const textVariants = cva('', {
         'tracking-[var(--tracking-heading)] text-text not-italic',
       ],
       heading3: [
-        'font-display text-heading3 leading-[var(--leading-heading)]',
-        'tracking-[var(--tracking-heading)] text-text not-italic',
-      ],
-      heading4: [
-        'font-display text-heading4 leading-[var(--leading-heading)]',
-        'tracking-[var(--tracking-heading)] text-text not-italic',
-      ],
-      heading5: [
-        'font-display text-heading5 font-regular leading-[var(--leading-heading)]',
+        'font-display text-heading3 font-normal leading-[var(--leading-heading)]',
         'tracking-[var(--tracking-heading-sm)] text-text not-italic',
       ],
-      heading6: [
-        'font-display text-heading6 font-normal leading-[var(--leading-heading)]',
+      heading4: [
+        'font-display text-heading4 font-normal leading-[var(--leading-heading)]',
         'tracking-[var(--tracking-heading-sm)] text-text not-italic',
       ],
 

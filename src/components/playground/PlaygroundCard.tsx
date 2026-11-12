@@ -52,11 +52,11 @@ export function PlaygroundCard({ item, priority = false }: PlaygroundCardProps) 
             {item.title}
           </Text>
           <div className="flex flex-col">
-            <Text variant="body-sm" className="leading-[1.1] font-light text-neutral-400">
+            <Text variant="body" className="leading-[1.1] font-light text-neutral-400">
               {item.description}
             </Text>
             {item.tools && (
-              <Text variant="body-sm" className="leading-[1.1] text-neutral-400">
+              <Text variant="body" className="leading-[1.1] text-neutral-400">
                 {item.tools}
               </Text>
             )}

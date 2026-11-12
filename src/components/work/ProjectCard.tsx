@@ -12,37 +12,36 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="group flex flex-col gap-8 pb-10"
+      className="group flex w-full max-w-[880px] flex-col gap-1 md:gap-4"
     >
-      <div className="relative h-[520px] w-[1000px] overflow-hidden rounded-md ">
+      <div className="relative aspect-[1000/520] w-full overflow-hidden rounded-lg">
         {project.thumbnail && (
           <Image
             src={project.thumbnail}
             alt={project.title}
             fill
+            sizes="(max-width: 935px) 100vw, 880px"
             className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
           />
         )}
       </div>
 
-      <div className="flex w-[1000px] justify-between gap-[60px] px-1">
-        <div className="flex w-[450px] flex-col gap-6">
-          <div className="flex flex-col gap-1">
-            <Text as="h2" variant="heading5">
-              {project.title}
-            </Text>
-            <Text variant="body">
-              {project.summary}
-            </Text>
-          </div>
-          {project.tags.length > 0 && (
-            <Tag label={project.tags.join(' / ')} />
+      <div className="flex w-full items-start justify-between gap-6 px-1 md:gap-[60px] md:px-3">
+        <div className="flex min-w-0 flex-1 flex-col gap-1">
+          <Text
+            as="h2"
+            variant="heading4"
+            className="text-body-case leading-[var(--leading-heading)] font-[350] tracking-[-0.02em] md:text-body-lg"
+          >
+            {project.title}
+          </Text>
+          {(project.tags.length > 0 || project.company) && (
+            <Tag
+              label={[project.company, project.tags.join(' / ')].filter(Boolean).join(' • ')}
+              className="text-label leading-[var(--leading-body-lg)] md:text-body-sm"
+            />
           )}
         </div>
-
-        <Text as="span" variant="body-md" className="shrink-0">
-          {project.year}
-        </Text>
       </div>
     </Link>
   );

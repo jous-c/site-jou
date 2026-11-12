@@ -14,8 +14,9 @@ export function FooterLink({ label, href, className }: FooterLinkProps) {
       rel="noopener noreferrer"
       className={cn(
         'inline-flex items-center justify-center rounded-sm',
-        'font-sans text-label font-medium uppercase',
-        'tracking-[var(--tracking-label)] leading-[var(--leading-label)]',
+        'font-sans text-body-sm uppercase',
+        'tracking-[0.1em] leading-[var(--leading-label)]',
+        'hover:text-text-secondary transition-colors',
         'text-text',
         className
       )}

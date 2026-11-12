@@ -29,10 +29,10 @@ export function PasswordGate({ slug }: PasswordGateProps) {
     <Container>
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-6">
         <div className="flex flex-col items-center gap-2 text-center">
-          <Text as="h1" variant="heading5">
+          <Text as="h1" variant="heading3">
             This case study is password protected
           </Text>
-          <Text variant="body-sm" className="text-text-secondary">Enter the password to view NDA work.</Text>
+          <Text variant="body" className="text-text-secondary">Enter the password to view NDA work.</Text>
         </div>
         <form onSubmit={handleSubmit} className="flex w-full max-w-sm flex-col gap-3">
           <input

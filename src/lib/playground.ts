@@ -15,7 +15,7 @@ export const playgroundItems: PlaygroundItem[] = [
   {
     title: 'Tree and time',
     description:
-      'Screen-based installation revealing lives and quality of life sentiment in Red Hook, Brooklyn.',
+      'Screen-based installation revealing lives and quality-of-life sentiment in Red Hook, Brooklyn.',
     tools: 'Processing / Raspberry Pi / LCD screen / 3D Print',
     year: '2025',
     src: '/images/playground/tree-and-time.jpg',
@@ -25,7 +25,7 @@ export const playgroundItems: PlaygroundItem[] = [
   },
   {
     title: 'Desire path radio',
-    description: 'Site design for Brooklyn based radio station.',
+    description: 'Site design for a Brooklyn-based radio station.',
     tools: 'Collaboration / Figma / React / Next.js',
     year: '2025',
     src: '/images/playground/desire-path-radio.mp4',
@@ -35,7 +35,7 @@ export const playgroundItems: PlaygroundItem[] = [
   },
   {
     title: 'VelloHealth',
-    description: 'Site design and build for community behavioral health program',
+    description: 'Site design and build for a community behavioral health program.',
     year: '2024',
     src: '/images/playground/vellohealth-site-design.mp4',
     alt: 'VelloHealth website design.',
@@ -44,8 +44,8 @@ export const playgroundItems: PlaygroundItem[] = [
   },
   {
     title: 'Vapor',
-    description: 'Pinterest-like site for storing all your youtube videos.',
-    tools: 'Javascript / React / Node.js',
+    description: 'Pinterest-like site for storing all your YouTube videos.',
+    tools: 'JavaScript / React / Node.js',
     year: '2024',
     src: '/images/playground/Vapor-thumbnail.avif',
     alt: 'Vapor website design.',
@@ -64,8 +64,8 @@ export const playgroundItems: PlaygroundItem[] = [
   },
   {
     title: 'Portal of Galaxy',
-    description: 'AR Projection device concept for Samsung Galaxy.',
-    tools: '3D rendering / physical mockup',
+    description: 'AR projection device concept for Samsung Galaxy.',
+    tools: '3D rendering / Physical mockup',
     year: '2019',
     src: '/images/playground/portal-of-galaxy.jpg',
     alt: 'Portal of Galaxy AR projection devices in blue and white, with a phone docked in the white unit.',
@@ -75,7 +75,7 @@ export const playgroundItems: PlaygroundItem[] = [
   {
     title: 'Scooter Prototype',
     description: 'Made for fun in college.',
-    tools: '1” metal tube stock / Long board trucks / Foam',
+    tools: '1” metal tube stock / Longboard trucks / Foam',
     year: '2018',
     src: '/images/playground/scooter-prototype.jpg',
     alt: 'Yellow seated scooter prototype with longboard trucks, held by a person standing on a striped floor.',

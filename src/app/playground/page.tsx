@@ -25,9 +25,9 @@ export default function PlaygroundPage() {
             What I made outside of work
           </Text>
           <div className="flex flex-col gap-3">
-            <Text variant="body-sm" className="font-light leading-[1.3] text-neutral-white">
-              I love exploring different methods of making with technology - from 3D modeling, rendering, to making physical objects. Since then, I've built
-              furniture, 3D modeled/rendered products, and designed sites for small businesses. 
+            <Text variant="body" className="font-light leading-[1.3] text-neutral-white">
+              I love exploring different methods of making with technology — from 3D modeling and rendering to making physical objects. Since then, I've built
+              furniture, 3D modeled/rendered products, and designed sites for small businesses.
             </Text>
             <Text variant="label" className="font-light leading-[1.3] text-neutral-white">
               circa 2019

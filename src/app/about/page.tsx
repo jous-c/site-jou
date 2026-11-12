@@ -15,7 +15,7 @@ export default function AboutPage() {
       <Container>
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-3">
-            <Text as="h1" variant="heading4">
+            <Text as="h1" variant="heading2">
               About
             </Text>
           </div>

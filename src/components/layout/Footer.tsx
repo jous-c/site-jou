@@ -5,29 +5,39 @@ import { FooterLink } from '@/components/ui/FooterLink';
 import { cn } from '@/lib/utils';
 
 const FOOTER_LINKS = [
-  { label: 'resume', href: '/doc/Jou%20An%20Chen_Resume_2026_.pdf' },
+  { label: 'CV', href: '/doc/Jou%20An%20Chen_Resume_2026_.pdf' },
   { label: 'linkedin', href: 'https://www.linkedin.com/in/jouanchen24/' },
-  { label: 'twitter', href: 'https://x.com/jous_c' },
+  { label: 'twitter / X', href: 'https://x.com/jous_c' },
 ];
 
-function Clock() {
-  const now = new Date();
-  const formatted = now.toLocaleDateString('en-US', {
+// Set at build time in next.config.ts from the last commit date.
+const LAST_UPDATED = new Date(process.env.SITE_LAST_UPDATED ?? Date.now());
+
+// Fixed time zone so server and client render the same string.
+const TIME_ZONE = 'America/New_York';
+
+function LastUpdated() {
+  const formatted = LAST_UPDATED.toLocaleDateString('en-US', {
     month: 'numeric',
     day: 'numeric',
     year: 'numeric',
+    timeZone: TIME_ZONE,
   });
-  const time = now.toLocaleTimeString('en-US', {
+  const time = LAST_UPDATED.toLocaleTimeString('en-US', {
     hour: 'numeric',
     minute: '2-digit',
     second: '2-digit',
     hour12: true,
-  });
+    timeZone: TIME_ZONE,
+  }).replace(/\s(?=[AP]M)/, '');
 
   return (
-    <span className="font-sans text-label uppercase text-secondary whitespace-nowrap">
-      Site updated - {formatted} {time}
-    </span>
+    <time
+      dateTime={LAST_UPDATED.toISOString()}
+      className="font-sans text-body-sm leading-[var(--leading-heading)] uppercase tracking-[0.04em] text-text-secondary whitespace-nowrap"
+    >
+      Last updated: {formatted} {time}
+    </time>
   );
 }
 
@@ -40,23 +50,25 @@ export function Footer() {
   return (
     <footer
       className={cn(
-        'px-page pt-28 pb-4',
-        isLanding && 'bg-graph-paper',
+        'border-t border-dashed border-border-light px-page pt-[30px] pb-16 md:pb-[100px]',
+        isLanding && 'bg-surface-light',
         isAbout && 'bg-yellow-200',
-        isPlayground && 'bg-graph-paper-dark text-neutral-white',
+        isPlayground && 'bg-graph-paper-dark border-neutral-800 text-neutral-white',
         !isLanding && !isAbout && !isPlayground && 'bg-surface',
       )}
     >
-      <div className="flex items-start justify-between border-t-dot pt-4">
-        <Clock />
+      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between md:gap-6">
+        <span className="font-sans text-body-sm font-medium uppercase tracking-[var(--tracking-label)] md:w-[280px]">
+          jou.design {LAST_UPDATED.getFullYear()}
+        </span>
 
-    
-
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {FOOTER_LINKS.map((link) => (
             <FooterLink key={link.label} label={link.label} href={link.href} />
           ))}
         </div>
+
+        <LastUpdated />
       </div>
     </footer>
   );

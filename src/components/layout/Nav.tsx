@@ -4,7 +4,6 @@ import { useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavItem } from '@/components/ui/NavItem';
-import { Text } from '@/components/ui/Text';
 import { cn } from '@/lib/utils';
 
 const NAV_ITEMS = [
@@ -12,7 +11,7 @@ const NAV_ITEMS = [
   { label: 'playground', href: '/playground' },
 ];
 
-const LOGO_SCROLL_THRESHOLD = 200;
+const LOGO_SCROLL_THRESHOLD = 20;
 
 function subscribeToWindowScroll(onStoreChange: () => void) {
   window.addEventListener('scroll', onStoreChange, { passive: true });
@@ -42,17 +41,19 @@ export function Nav() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50',
-        isCaseStudy && 'bg-surface-light',
-        isLanding && 'bg-graph-paper',
-        isAbout && 'bg-yellow-200',
-        isPlayground && 'bg-graph-paper-dark text-neutral-white',
-        !isCaseStudy && !isLanding && !isAbout && !isPlayground && 'bg-surface',
+        'sticky top-0 z-50 transition-colors duration-300 ease-out motion-reduce:transition-none',
+        isPlayground && 'text-neutral-white',
+        // Transparent at the top so the hero shows through; fills once scrolled.
+        showLogo && isCaseStudy && 'bg-surface-light',
+        showLogo && isLanding && 'bg-surface-light',
+        showLogo && isAbout && 'bg-yellow-200',
+        showLogo && isPlayground && 'bg-graph-paper-dark',
+        showLogo && !isCaseStudy && !isLanding && !isAbout && !isPlayground && 'bg-surface',
       )}
     >
       <nav
         className={cn(
-          'relative flex min-h-[var(--nav-height)] items-end gap-2 px-page pt-2 pb-4',
+          'relative flex min-h-[var(--nav-height)] items-center gap-3 px-page py-3',
           showLogo && 'max-md:flex-wrap',
           !isCaseStudy && 'justify-end',
         )}
@@ -64,6 +65,8 @@ export function Nav() {
           inert={showLogo ? undefined : true}
           className={cn(
             'z-10 whitespace-nowrap',
+            'font-sans text-label font-medium uppercase tracking-[var(--tracking-label)]',
+            'leading-[var(--leading-label)] text-text',
             'transition-opacity duration-300 ease-out motion-reduce:transition-none',
             'md:absolute md:top-1/2 md:left-page md:-translate-y-1/2',
             showLogo
@@ -71,9 +74,7 @@ export function Nav() {
               : 'pointer-events-none opacity-0 max-md:hidden',
           )}
         >
-          <Text as="span" variant="body-md">
-            jou.design
-          </Text>
+          jou.design
         </Link>
         {isCaseStudy && (
           <span

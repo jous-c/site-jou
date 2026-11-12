@@ -15,7 +15,7 @@ export default async function HomePage() {
         <ProjectList projects={projects} />
       ) : (
         <div className="px-page">
-          <Text variant="body-sm" className="text-text-secondary">
+          <Text variant="body-sm" className="text-label text-text-secondary md:text-body-sm">
             No projects yet — add your Notion credentials to get started.
           </Text>
         </div>

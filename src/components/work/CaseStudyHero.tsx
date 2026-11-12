@@ -31,7 +31,7 @@ export function CaseStudyHero({ project }: CaseStudyHeroProps) {
               ))}
             </div>
           )}
-          <Text as="h1" variant="heading3">
+          <Text as="h1" variant="heading1">
             {project.title}
           </Text>
           <div className="flex items-center gap-4">

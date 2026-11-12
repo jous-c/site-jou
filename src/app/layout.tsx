@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Noto_Serif } from 'next/font/google';
 import localFont from 'next/font/local';
 import '@/styles/globals.css';
 import { Nav } from '@/components/layout/Nav';
@@ -30,6 +30,13 @@ const monumentGrotesk = localFont({
   display: 'swap',
 });
 
+const notoSerif = Noto_Serif({
+  variable: '--font-noto-serif',
+  subsets: ['latin'],
+  weight: 'variable',
+  display: 'swap',
+});
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -55,7 +62,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${woodland.variable} ${monumentGrotesk.variable} ${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${woodland.variable} ${monumentGrotesk.variable} ${notoSerif.variable} ${geistSans.variable} ${geistMono.variable}`}
+      // Force light mode locally; production still follows the OS setting.
+      data-theme={process.env.NODE_ENV === 'development' ? 'light' : undefined}
+    >
       <body className="bg-surface text-text antialiased">
         <RouteBackground>
           <Nav />
